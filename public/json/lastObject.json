@@ -5,6 +5,11 @@
 		"category": "meat"
 	},
 	{
+		"origin": "폴드포크",
+		"integration": "폴드포크",
+		"category": "meat"
+	},
+	{
 		"origin": "스모키바베큐 큐브스테이크",
 		"integration": "스테이크",
 		"category": "meat"
@@ -1186,7 +1191,7 @@
 	},
 	{
 		"origin": "부라타치즈",
-		"integration": "크림치즈",
+		"integration": "부라타치즈",
 		"category": "cheese"
 	},
 	{

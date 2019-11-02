@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const URI = `mongodb+srv://${process.env.DB_ID}:${process.env.DB_PW}@cluster0-qxxzk.mongodb.net/test?retryWrites=true&w=majority`;
-
+// mongodb+srv://<username>:<password>@cluster0-qxxzk.mongodb.net/test?retryWrites=true&w=majority
 module.exports = () => {
     const connect = () => {
         if (process.env.NODE_ENV !== 'production') {
