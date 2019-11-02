@@ -1,0 +1,1282 @@
+[
+	{
+		"origin": "허니비프",
+		"integration": "스테이크",
+		"category": "meat"
+	},
+	{
+		"origin": "스모키바베큐 큐브스테이크",
+		"integration": "스테이크",
+		"category": "meat"
+	},
+	{
+		"origin": "레드와인스테이크",
+		"integration": "스테이크",
+		"category": "meat"
+	},
+	{
+		"origin": "직화불고기",
+		"integration": "불고기",
+		"category": "meat"
+	},
+	{
+		"origin": "페퍼로니",
+		"integration": "페퍼로니",
+		"category": "meat"
+	},
+	{
+		"origin": "포크토핑",
+		"integration": "미트",
+		"category": "meat"
+	},
+	{
+		"origin": "베이컨",
+		"integration": "베이컨",
+		"category": "meat"
+	},
+	{
+		"origin": "핫앤스위트치킨",
+		"integration": "핫치킨",
+		"category": "meat"
+	},
+	{
+		"origin": "불고기",
+		"integration": "불고기",
+		"category": "meat"
+	},
+	{
+		"origin": "소불고기",
+		"integration": "불고기",
+		"category": "meat"
+	},
+	{
+		"origin": "카나디언소세지",
+		"integration": "소시지",
+		"category": "meat"
+	},
+	{
+		"origin": "스테이크",
+		"integration": "스테이크",
+		"category": "meat"
+	},
+	{
+		"origin": "숙성로인",
+		"integration": "소시지",
+		"category": "meat"
+	},
+	{
+		"origin": "세블락소세지",
+		"integration": "소시지",
+		"category": "meat"
+	},
+	{
+		"origin": "핫바베큐치킨",
+		"integration": "핫치킨",
+		"category": "meat"
+	},
+	{
+		"origin": "불고기타코미트",
+		"integration": "미트",
+		"category": "meat"
+	},
+	{
+		"origin": "떡갈비",
+		"integration": "떡갈비",
+		"category": "meat"
+	},
+	{
+		"origin": "닭안심살",
+		"integration": "치킨",
+		"category": "meat"
+	},
+	{
+		"origin": "그릴드 치킨",
+		"integration": "치킨",
+		"category": "meat"
+	},
+	{
+		"origin": "핫 치킨",
+		"integration": "핫치킨",
+		"category": "meat"
+	},
+	{
+		"origin": "비프 스테이크",
+		"integration": "스테이크",
+		"category": "meat"
+	},
+	{
+		"origin": "이탈리안 소시지",
+		"integration": "소시지",
+		"category": "meat"
+	},
+	{
+		"origin": "햄",
+		"integration": "소시지",
+		"category": "meat"
+	},
+	{
+		"origin": "비프",
+		"integration": "미트",
+		"category": "meat"
+	},
+	{
+		"origin": "치킨 스트립",
+		"integration": "치킨",
+		"category": "meat"
+	},
+	{
+		"origin": "직화 간장 불고기",
+		"integration": "불고기",
+		"category": "meat"
+	},
+	{
+		"origin": "고추장 불고기",
+		"integration": "매운 불고기",
+		"category": "meat"
+	},
+	{
+		"origin": "스파이시치킨",
+		"integration": "핫치킨",
+		"category": "meat"
+	},
+	{
+		"origin": "카나디언햄",
+		"integration": "소시지",
+		"category": "meat"
+	},
+	{
+		"origin": "페페로니",
+		"integration": "페퍼로니",
+		"category": "meat"
+	},
+	{
+		"origin": "생불고기",
+		"integration": "불고기",
+		"category": "meat"
+	},
+	{
+		"origin": "치킨탑핑",
+		"integration": "치킨",
+		"category": "meat"
+	},
+	{
+		"origin": "살라미",
+		"integration": "살라미",
+		"category": "meat"
+	},
+	{
+		"origin": "차슈스테이크",
+		"integration": "스테이크",
+		"category": "meat"
+	},
+	{
+		"origin": "부어스첸 소시지",
+		"integration": "소시지",
+		"category": "meat"
+	},
+	{
+		"origin": "미트토핑",
+		"integration": "미트",
+		"category": "meat"
+	},
+	{
+		"origin": "제주흑돼지스테이크",
+		"integration": "스테이크",
+		"category": "meat"
+	},
+	{
+		"origin": "안창살스테이크",
+		"integration": "스테이크",
+		"category": "meat"
+	},
+	{
+		"origin": "우삼겹",
+		"integration": "불고기",
+		"category": "meat"
+	},
+	{
+		"origin": "케이준치킨",
+		"integration": "치킨",
+		"category": "meat"
+	},
+	{
+		"origin": "리얼 비프스테이크",
+		"integration": "스테이크",
+		"category": "meat"
+	},
+	{
+		"origin": "베이컨찹",
+		"integration": "베이컨",
+		"category": "meat"
+	},
+	{
+		"origin": "카나디안햄",
+		"integration": "소시지",
+		"category": "meat"
+	},
+	{
+		"origin": "수제 소시지",
+		"integration": "소시지",
+		"category": "meat"
+	},
+	{
+		"origin": "후레쉬베이컨",
+		"integration": "베이컨",
+		"category": "meat"
+	},
+	{
+		"origin": "와규크럼블",
+		"integration": "불고기",
+		"category": "meat"
+	},
+	{
+		"origin": "큐브스테이크",
+		"integration": "스테이크",
+		"category": "meat"
+	},
+	{
+		"origin": "고기믹스",
+		"integration": "불고기",
+		"category": "meat"
+	},
+	{
+		"origin": "스파이시 치킨",
+		"integration": "핫치킨",
+		"category": "meat"
+	},
+	{
+		"origin": "베이컨칩",
+		"integration": "베이컨",
+		"category": "meat"
+	},
+	{
+		"origin": "리얼불고기",
+		"integration": "불고기",
+		"category": "meat"
+	},
+	{
+		"origin": "와규 크럼블",
+		"integration": "불고기",
+		"category": "meat"
+	},
+	{
+		"origin": "포크",
+		"integration": "미트",
+		"category": "meat"
+	},
+	{
+		"origin": "이베리코 포크",
+		"integration": "스테이크",
+		"category": "meat"
+	},
+	{
+		"origin": "블랙앵거스 비프",
+		"integration": "스테이크",
+		"category": "meat"
+	},
+	{
+		"origin": "통 비프",
+		"integration": "스테이크",
+		"category": "meat"
+	},
+	{
+		"origin": "통 포크",
+		"integration": "스테이크",
+		"category": "meat"
+	},
+	{
+		"origin": "비스테카",
+		"integration": "스테이크",
+		"category": "meat"
+	},
+	{
+		"origin": "그릴드 비프",
+		"integration": "스테이크",
+		"category": "meat"
+	},
+	{
+		"origin": "새우",
+		"integration": "새우",
+		"category": "seafood"
+	},
+	{
+		"origin": "낙지",
+		"integration": "오징어",
+		"category": "seafood"
+	},
+	{
+		"origin": "갑오징어",
+		"integration": "오징어",
+		"category": "seafood"
+	},
+	{
+		"origin": "갈릭새우",
+		"integration": "새우",
+		"category": "seafood"
+	},
+	{
+		"origin": "칠리새우",
+		"integration": "새우",
+		"category": "seafood"
+	},
+	{
+		"origin": "솔방울오징어",
+		"integration": "오징어",
+		"category": "seafood"
+	},
+	{
+		"origin": "버터플라이새우",
+		"integration": "새우",
+		"category": "seafood"
+	},
+	{
+		"origin": "코코넛쉬림프",
+		"integration": "새우",
+		"category": "seafood"
+	},
+	{
+		"origin": "케이준 쉬림프",
+		"integration": "새우",
+		"category": "seafood"
+	},
+	{
+		"origin": "알래스카 크랩스",
+		"integration": "게",
+		"category": "seafood"
+	},
+	{
+		"origin": "쉬림프",
+		"integration": "새우",
+		"category": "seafood"
+	},
+	{
+		"origin": "씨푸드",
+		"integration": "새우",
+		"category": "seafood"
+	},
+	{
+		"origin": "통새우",
+		"integration": "새우",
+		"category": "seafood"
+	},
+	{
+		"origin": "문어",
+		"integration": "문어",
+		"category": "seafood"
+	},
+	{
+		"origin": "랍스터볼",
+		"integration": "랍스터볼",
+		"category": "seafood"
+	},
+	{
+		"origin": "블랙타이거 슈림프",
+		"integration": "새우",
+		"category": "seafood"
+	},
+	{
+		"origin": "케이준새우",
+		"integration": "새우",
+		"category": "seafood"
+	},
+	{
+		"origin": "블랙올리브",
+		"integration": "올리브",
+		"category": "vegetable"
+	},
+	{
+		"origin": "웨지감자",
+		"integration": "감자",
+		"category": "vegetable"
+	},
+	{
+		"origin": "옥수수",
+		"integration": "콘",
+		"category": "vegetable"
+	},
+	{
+		"origin": "새송이버섯",
+		"integration": "버섯",
+		"category": "vegetable"
+	},
+	{
+		"origin": "고구마",
+		"integration": "고구마",
+		"category": "vegetable"
+	},
+	{
+		"origin": "감자",
+		"integration": "감자",
+		"category": "vegetable"
+	},
+	{
+		"origin": "방울토마토",
+		"integration": "토마토",
+		"category": "vegetable"
+	},
+	{
+		"origin": "아이리쉬포테이토",
+		"integration": "감자",
+		"category": "vegetable"
+	},
+	{
+		"origin": "청피망",
+		"integration": "피망",
+		"category": "vegetable"
+	},
+	{
+		"origin": "양파",
+		"integration": "양파",
+		"category": "vegetable"
+	},
+	{
+		"origin": "피망",
+		"integration": "피망",
+		"category": "vegetable"
+	},
+	{
+		"origin": "포테이토",
+		"integration": "감자",
+		"category": "vegetable"
+	},
+	{
+		"origin": "양송이 버섯",
+		"integration": "버섯",
+		"category": "vegetable"
+	},
+	{
+		"origin": "양송이",
+		"integration": "버섯",
+		"category": "vegetable"
+	},
+	{
+		"origin": "블랙 올리브",
+		"integration": "올리브",
+		"category": "vegetable"
+	},
+	{
+		"origin": "콘",
+		"integration": "콘",
+		"category": "vegetable"
+	},
+	{
+		"origin": "방울 토마토",
+		"integration": "토마토",
+		"category": "vegetable"
+	},
+	{
+		"origin": "할라페뇨",
+		"integration": "할라피뇨",
+		"category": "vegetable"
+	},
+	{
+		"origin": "토마토",
+		"integration": "토마토",
+		"category": "vegetable"
+	},
+	{
+		"origin": "피클",
+		"integration": "피클",
+		"category": "vegetable"
+	},
+	{
+		"origin": "표고",
+		"integration": "버섯",
+		"category": "vegetable"
+	},
+	{
+		"origin": "홍피망",
+		"integration": "피망",
+		"category": "vegetable"
+	},
+	{
+		"origin": "해남산 고구마",
+		"integration": "고구마",
+		"category": "vegetable"
+	},
+	{
+		"origin": "브로콜리",
+		"integration": "브로콜리",
+		"category": "vegetable"
+	},
+	{
+		"origin": "올리브",
+		"integration": "올리브",
+		"category": "vegetable"
+	},
+	{
+		"origin": "버섯",
+		"integration": "버섯",
+		"category": "vegetable"
+	},
+	{
+		"origin": "할라피뇨",
+		"integration": "할라피뇨",
+		"category": "vegetable"
+	},
+	{
+		"origin": "허브갈릭감자",
+		"integration": "감자",
+		"category": "vegetable"
+	},
+	{
+		"origin": "시금치",
+		"integration": "시금치",
+		"category": "vegetable"
+	},
+	{
+		"origin": "웻지포테이토",
+		"integration": "감자",
+		"category": "vegetable"
+	},
+	{
+		"origin": "아보카도",
+		"integration": "아보카도",
+		"category": "vegetable"
+	},
+	{
+		"origin": "갈릭슬라이스",
+		"integration": "마늘",
+		"category": "vegetable"
+	},
+	{
+		"origin": "단호박샐러드",
+		"integration": "단호박",
+		"category": "vegetable"
+	},
+	{
+		"origin": "고구마샐러드",
+		"integration": "고구마",
+		"category": "vegetable"
+	},
+	{
+		"origin": "단호박",
+		"integration": "단호박",
+		"category": "vegetable"
+	},
+	{
+		"origin": "스위트콘",
+		"integration": "콘",
+		"category": "vegetable"
+	},
+	{
+		"origin": "홍피망챱",
+		"integration": "피망",
+		"category": "vegetable"
+	},
+	{
+		"origin": "로스트고구마",
+		"integration": "고구마",
+		"category": "vegetable"
+	},
+	{
+		"origin": "로스트 고구마",
+		"integration": "고구마",
+		"category": "vegetable"
+	},
+	{
+		"origin": "할리피뇨찹",
+		"integration": "할라피뇨",
+		"category": "vegetable"
+	},
+	{
+		"origin": "양송이버섯",
+		"integration": "버섯",
+		"category": "vegetable"
+	},
+	{
+		"origin": "로스트4종버섯",
+		"integration": "버섯",
+		"category": "vegetable"
+	},
+	{
+		"origin": "야채",
+		"integration": "피망",
+		"category": "vegetable"
+	},
+	{
+		"origin": "구운마늘",
+		"integration": "마늘",
+		"category": "vegetable"
+	},
+	{
+		"origin": "갈릭",
+		"integration": "마늘",
+		"category": "vegetable"
+	},
+	{
+		"origin": "아스파라거스",
+		"integration": "아스파라거스",
+		"category": "vegetable"
+	},
+	{
+		"origin": "콘 옥수수",
+		"integration": "콘",
+		"category": "vegetable"
+	},
+	{
+		"origin": "토마토 슬라이스",
+		"integration": "토마토",
+		"category": "vegetable"
+	},
+	{
+		"origin": "적양파",
+		"integration": "양파",
+		"category": "vegetable"
+	},
+	{
+		"origin": "갈릭 후레이크",
+		"integration": "마늘",
+		"category": "vegetable"
+	},
+	{
+		"origin": "고구마 큐브",
+		"integration": "고구마",
+		"category": "vegetable"
+	},
+	{
+		"origin": "머쉬룸",
+		"integration": "버섯",
+		"category": "vegetable"
+	},
+	{
+		"origin": "선드라이 토마토",
+		"integration": "토마토",
+		"category": "vegetable"
+	},
+	{
+		"origin": "구운감자",
+		"integration": "감자",
+		"category": "vegetable"
+	},
+	{
+		"origin": "스모크 새송이 버섯",
+		"integration": "버섯",
+		"category": "vegetable"
+	},
+	{
+		"origin": "선드라이토마토",
+		"integration": "토마토",
+		"category": "vegetable"
+	},
+	{
+		"origin": "고구마 무스",
+		"integration": "달콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "체다치즈마요소스",
+		"integration": "고소",
+		"category": "sauce"
+	},
+	{
+		"origin": "마요네즈",
+		"integration": "고소",
+		"category": "sauce"
+	},
+	{
+		"origin": "갈릭스프레드소스",
+		"integration": "고소",
+		"category": "sauce"
+	},
+	{
+		"origin": "마늘크림소스",
+		"integration": "고소",
+		"category": "sauce"
+	},
+	{
+		"origin": "허니시럽",
+		"integration": "달콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "특제소스",
+		"integration": "달콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "사워크림",
+		"integration": "새콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "고구마무스",
+		"integration": "달콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "겨자소스",
+		"integration": "매콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "홀그레인 머스터드",
+		"integration": "새콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "스테이크소스",
+		"integration": "달콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "칠리소스",
+		"integration": "매콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "핫칠리소스",
+		"integration": "매콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "스위트 칠리 소스",
+		"integration": "달콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "제스티 버거 소스",
+		"integration": "고소",
+		"category": "sauce"
+	},
+	{
+		"origin": "BBQ 마요 소스",
+		"integration": "고소",
+		"category": "sauce"
+	},
+	{
+		"origin": "토마토 소스",
+		"integration": "새콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "타바스코 BBQ소스",
+		"integration": "매콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "갈릭 소스",
+		"integration": "고소",
+		"category": "sauce"
+	},
+	{
+		"origin": "갈릭 랜치 소스",
+		"integration": "고소",
+		"category": "sauce"
+	},
+	{
+		"origin": "타바스코 BBQ 소스",
+		"integration": "매콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "토미토 소스",
+		"integration": "새콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "불고기 소스",
+		"integration": "달콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "알프레도 소스",
+		"integration": "고소",
+		"category": "sauce"
+	},
+	{
+		"origin": "블랙페퍼",
+		"integration": "매콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "크러쉬드 페퍼",
+		"integration": "매콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "바베큐 소스",
+		"integration": "달콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "레드크러쉬드페퍼",
+		"integration": "매콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "디종오렌지소스",
+		"integration": "새콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "마리나라소스",
+		"integration": "새콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "제주한라봉청",
+		"integration": "달콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "트리플스프레드",
+		"integration": "고소",
+		"category": "sauce"
+	},
+	{
+		"origin": "로메스코소스",
+		"integration": "고소",
+		"category": "sauce"
+	},
+	{
+		"origin": "블루치즈소스",
+		"integration": "고소",
+		"category": "sauce"
+	},
+	{
+		"origin": "트리플스프레드소스",
+		"integration": "고소",
+		"category": "sauce"
+	},
+	{
+		"origin": "어니언소스",
+		"integration": "고소",
+		"category": "sauce"
+	},
+	{
+		"origin": "홀그레인머스타드소스",
+		"integration": "매콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "잭다니엘소스",
+		"integration": "달콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "비스크소스",
+		"integration": "고소",
+		"category": "sauce"
+	},
+	{
+		"origin": "불고기소스",
+		"integration": "달콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "스파이시소이소스",
+		"integration": "매콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "레드와인소스",
+		"integration": "달콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "렌치소스",
+		"integration": "고소",
+		"category": "sauce"
+	},
+	{
+		"origin": "바비큐 이탈리안소스",
+		"integration": "고소",
+		"category": "sauce"
+	},
+	{
+		"origin": "밀크시럽소스",
+		"integration": "달콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "랜치소스",
+		"integration": "고소",
+		"category": "sauce"
+	},
+	{
+		"origin": "토마토소스",
+		"integration": "새콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "레몬소스",
+		"integration": "새콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "로제소스",
+		"integration": "달콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "에멘탈 치즈 소스",
+		"integration": "고소",
+		"category": "sauce"
+	},
+	{
+		"origin": "버터갈릭오일",
+		"integration": "고소",
+		"category": "sauce"
+	},
+	{
+		"origin": "타르타르 소스",
+		"integration": "고소",
+		"category": "sauce"
+	},
+	{
+		"origin": "스파이시마요",
+		"integration": "매콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "특제 바비큐 소스",
+		"integration": "달콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "트러플 크림",
+		"integration": "고소",
+		"category": "sauce"
+	},
+	{
+		"origin": "페터크림",
+		"integration": "고소",
+		"category": "sauce"
+	},
+	{
+		"origin": "망고하바네로 소스",
+		"integration": "매콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "호스래디시 소스",
+		"integration": "새콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "딥치즈 소스",
+		"integration": "고소",
+		"category": "sauce"
+	},
+	{
+		"origin": "New 고구마 무스",
+		"integration": "달콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "코코넛허니버터 파우더",
+		"integration": "고소",
+		"category": "sauce"
+	},
+	{
+		"origin": "아라비아타 소스",
+		"integration": "매콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "로마노크림",
+		"integration": "고소",
+		"category": "sauce"
+	},
+	{
+		"origin": "애플파이 소스",
+		"integration": "달콤",
+		"category": "sauce"
+	},
+	{
+		"origin": "갈릭올리브 소스",
+		"integration": "고소",
+		"category": "sauce"
+	},
+	{
+		"origin": "모짜렐라치즈",
+		"integration": "피자치즈",
+		"category": "cheese"
+	},
+	{
+		"origin": "고르곤졸라치즈",
+		"integration": "고르곤졸라",
+		"category": "cheese"
+	},
+	{
+		"origin": "치즈",
+		"integration": "피자치즈",
+		"category": "cheese"
+	},
+	{
+		"origin": "모짜렐라 치즈",
+		"integration": "피자치즈",
+		"category": "cheese"
+	},
+	{
+		"origin": "스트링 치즈",
+		"integration": "피자치즈",
+		"category": "cheese"
+	},
+	{
+		"origin": "아시아고 치즈",
+		"integration": "아시아고 치즈",
+		"category": "cheese"
+	},
+	{
+		"origin": "폰티나 치즈",
+		"integration": "폰티나 치즈",
+		"category": "cheese"
+	},
+	{
+		"origin": "프로볼로네 치즈",
+		"integration": "프로볼로네",
+		"category": "cheese"
+	},
+	{
+		"origin": "로마노 치즈",
+		"integration": "로마노 치즈",
+		"category": "cheese"
+	},
+	{
+		"origin": "파마산 치즈",
+		"integration": "피자치즈",
+		"category": "cheese"
+	},
+	{
+		"origin": "체다 치즈",
+		"integration": "피자치즈",
+		"category": "cheese"
+	},
+	{
+		"origin": "체다치즈",
+		"integration": "피자치즈",
+		"category": "cheese"
+	},
+	{
+		"origin": "그라나파다노",
+		"integration": "그라나파다노",
+		"category": "cheese"
+	},
+	{
+		"origin": "리코타",
+		"integration": "리코타",
+		"category": "cheese"
+	},
+	{
+		"origin": "스위트리코타",
+		"integration": "리코타",
+		"category": "cheese"
+	},
+	{
+		"origin": "임실치즈",
+		"integration": "피자치즈",
+		"category": "cheese"
+	},
+	{
+		"origin": "생모짜렐라",
+		"integration": "피자치즈",
+		"category": "cheese"
+	},
+	{
+		"origin": "에멘탈치즈",
+		"integration": "에멘탈치즈",
+		"category": "cheese"
+	},
+	{
+		"origin": "리코타치즈",
+		"integration": "리코타",
+		"category": "cheese"
+	},
+	{
+		"origin": "보코치니치즈",
+		"integration": "보코치니치즈",
+		"category": "cheese"
+	},
+	{
+		"origin": "고다치즈",
+		"integration": "고다치즈",
+		"category": "cheese"
+	},
+	{
+		"origin": "멜팅큐브치즈",
+		"integration": "멜팅큐브치즈",
+		"category": "cheese"
+	},
+	{
+		"origin": "까망베르치즈",
+		"integration": "까망베르치즈",
+		"category": "cheese"
+	},
+	{
+		"origin": "멜론망고치즈",
+		"integration": "멜론망고치즈",
+		"category": "cheese"
+	},
+	{
+		"origin": "모짜렐라",
+		"integration": "피자치즈",
+		"category": "cheese"
+	},
+	{
+		"origin": "라끌렛치즈",
+		"integration": "라끌렛치즈",
+		"category": "cheese"
+	},
+	{
+		"origin": "크림치즈",
+		"integration": "크림치즈",
+		"category": "cheese"
+	},
+	{
+		"origin": "체더",
+		"integration": "피자치즈",
+		"category": "cheese"
+	},
+	{
+		"origin": "파르메산",
+		"integration": "피자치즈",
+		"category": "cheese"
+	},
+	{
+		"origin": "모차렐라 치즈",
+		"integration": "피자치즈",
+		"category": "cheese"
+	},
+	{
+		"origin": "프로볼로네",
+		"integration": "프로볼로네",
+		"category": "cheese"
+	},
+	{
+		"origin": "모차렐라",
+		"integration": "피자치즈",
+		"category": "cheese"
+	},
+	{
+		"origin": "카망베르 크림 치즈",
+		"integration": "크림치즈",
+		"category": "cheese"
+	},
+	{
+		"origin": "체더치즈",
+		"integration": "피자치즈",
+		"category": "cheese"
+	},
+	{
+		"origin": "모파렐라 치즈",
+		"integration": "피자치즈",
+		"category": "cheese"
+	},
+	{
+		"origin": "4가지 치즈",
+		"integration": "콰트로",
+		"category": "cheese"
+	},
+	{
+		"origin": "리코타 치즈",
+		"integration": "리코타",
+		"category": "cheese"
+	},
+	{
+		"origin": "콰트로치즈퐁듀",
+		"integration": "콰트로",
+		"category": "cheese"
+	},
+	{
+		"origin": "로마노크림치즈",
+		"integration": "크림치즈",
+		"category": "cheese"
+	},
+	{
+		"origin": "부라타치즈",
+		"integration": "크림치즈",
+		"category": "cheese"
+	},
+	{
+		"origin": "보코치니 치즈",
+		"integration": "보코치니 치즈",
+		"category": "cheese"
+	},
+	{
+		"origin": "파르메산 치즈",
+		"integration": "피자치즈",
+		"category": "cheese"
+	},
+	{
+		"origin": "치즈 4종",
+		"integration": "콰트로",
+		"category": "cheese"
+	},
+	{
+		"origin": "화이트크림스파게티",
+		"integration": "크림파스타",
+		"category": "etc"
+	},
+	{
+		"origin": "또띠아",
+		"integration": "또띠아",
+		"category": "etc"
+	},
+	{
+		"origin": "이탈리안 허브",
+		"integration": "허브",
+		"category": "etc"
+	},
+	{
+		"origin": "파슬리",
+		"integration": "허브",
+		"category": "etc"
+	},
+	{
+		"origin": "파슬리찹",
+		"integration": "허브",
+		"category": "etc"
+	},
+	{
+		"origin": "오레가노",
+		"integration": "허브",
+		"category": "etc"
+	},
+	{
+		"origin": "아몬드",
+		"integration": "아몬드",
+		"category": "etc"
+	},
+	{
+		"origin": "아몬드 슬라이스",
+		"integration": "아몬드",
+		"category": "etc"
+	},
+	{
+		"origin": "소보로",
+		"integration": "후레이크",
+		"category": "etc"
+	},
+	{
+		"origin": "나초칩",
+		"integration": "후레이크",
+		"category": "etc"
+	},
+	{
+		"origin": "파인애플",
+		"integration": "파인애플",
+		"category": "etc"
+	},
+	{
+		"origin": "크렌베리",
+		"integration": "크랜베리",
+		"category": "etc"
+	},
+	{
+		"origin": "건크랜베리",
+		"integration": "크랜베리",
+		"category": "etc"
+	},
+	{
+		"origin": "건크렌베리",
+		"integration": "크랜베리",
+		"category": "etc"
+	},
+	{
+		"origin": "찰떡",
+		"integration": "찰떡",
+		"category": "etc"
+	}
+]
