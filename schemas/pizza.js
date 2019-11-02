@@ -15,7 +15,7 @@ const pizzaSchema = new Schema({
         type: Number,
         required: true,
     },
-    m_kal: { // 레귤러 사이즈 칼로리
+    m_cal: { // 레귤러 사이즈 칼로리
         type: Number,
         required: true,
     },
