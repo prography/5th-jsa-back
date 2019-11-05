@@ -11,7 +11,8 @@
 		"체다치즈마요소스",
 		"마요네즈",
 		"모짜렐라치즈"
-	]
+	],
+	"image": "school_honny_beef.jpg"
 },{
 	"brand": "피자스쿨",
 	"pizza_name": "더블갈릭바베큐피자",
@@ -23,7 +24,8 @@
 		"갈릭스프레드소스",
 		"마늘크림소스",
 		"모짜렐라치즈"
-	]
+	],
+	"image": "school_garlic_double.png"
 },{
 	"brand": "피자스쿨",
 	"pizza_name": "고르곤졸라피자",
@@ -34,7 +36,8 @@
 		"고르곤졸라치즈",
 		"모짜렐라치즈",
 		"허니시럽"
-	]
+	],
+	"image": "school_gorgonzola.png"
 },{
 	"brand": "피자스쿨",
 	"pizza_name": "직화파인애플피자",
@@ -45,7 +48,8 @@
 		"직화불고기",
 		"파인애플",
 		"페퍼로니"
-	]
+	],
+	"image": "school_fire_pineapple.png"
 },{
 	"brand": "피자스쿨",
 	"pizza_name": "치즈피자",
@@ -55,7 +59,8 @@
 	"topping": [
 		"치즈",
 		"옥수수"
-	]
+	],
+	"image": "school_cheese.jpg"
 },{
 	"brand": "피자스쿨",
 	"pizza_name": "페퍼로니피자",
@@ -65,7 +70,8 @@
 	"topping": [
 		"치즈",
 		"페퍼로니"
-	]
+	],
+	"image": "school_pepperoni.jpg"
 },{
 	"brand": "피자스쿨",
 	"pizza_name": "콤비네이션피자",
@@ -76,7 +82,8 @@
 		"페퍼로니",
 		"포크토핑",
 		"새송이버섯"
-	]
+	],
+	"image": "school_combination.jpg"
 },{
 	"brand": "피자스쿨",
 	"pizza_name": "고구마피자",
@@ -86,7 +93,8 @@
 	"topping": [
 		"고구마",
 		"특제소스"
-	]
+	],
+	"image": "school_sweet_potato.jpg"
 },{
 	"brand": "피자스쿨",
 	"pizza_name": "포테이토피자",
@@ -96,7 +104,8 @@
 	"topping": [
 		"감자",
 		"베이컨"
-	]
+	],
+	"image": "school_potato.jpg"
 },{
 	"brand": "피자스쿨",
 	"pizza_name": "핫치킨피자",
@@ -105,7 +114,8 @@
 	"calorie": "1740",
 	"topping": [
 		"핫앤스위트치킨"
-	]
+	],
+	"image": "school_hot_chicken.jpg"
 },{
 	"brand": "피자스쿨",
 	"pizza_name": "불고기피자",
@@ -114,7 +124,8 @@
 	"calorie": "1760",
 	"topping": [
 		"불고기"
-	]
+	],
+	"image": "school_bulgogi.jpg"
 },{
 	"brand": "피자스쿨",
 	"pizza_name": "나폴리피자",
@@ -125,7 +136,8 @@
 		"카나디언소세지",
 		"방울토마토",
 		"페퍼로니"
-	]
+	],
+	"image": "school_naples.jpg"
 },{
 	"brand": "피자스쿨",
 	"pizza_name": "스테이크피자",
@@ -135,7 +147,8 @@
 	"topping": [
 		"스테이크",
 		"방울토마토"
-	]
+	],
+	"image": "school_steak.jpg"
 },{
 	"brand": "피자스쿨",
 	"pizza_name": "까르보네피자",
@@ -145,7 +158,8 @@
 	"topping": [
 		"화이트크림스파게티",
 		"숙성로인"
-	]
+	],
+	"image": "school_carbone.jpg"
 },{
 	"brand": "피자스쿨",
 	"pizza_name": "아이리쉬포테이토피자",
@@ -155,7 +169,8 @@
 	"topping": [
 		"아이리쉬포테이토",
 		"사워크림"
-	]
+	],
+	"image": "school_iris_potato.jpg"
 },{
 	"brand": "피자스쿨",
 	"pizza_name": "깐쇼새우피자",
@@ -166,7 +181,8 @@
 		"새우",
 		"베이컨",
 		"청피망"
-	]
+	],
+	"image": "school_shrimp.jpg"
 },{
 	"brand": "피자스쿨",
 	"pizza_name": "도이치바이트피자",
@@ -177,7 +193,8 @@
 		"세블락소세지",
 		"고구마무스",
 		"겨자소스"
-	]
+	],
+	"image": "school_doichi.jpg"
 },{
 	"brand": "피자스쿨",
 	"pizza_name": "멕시칸바이트피자",
@@ -187,7 +204,8 @@
 	"topping": [
 		"핫바베큐치킨",
 		"고구마무스"
-	]
+	],
+	"image": "school_mexican_bite.jpg"
 },{
 	"brand": "피자스쿨",
 	"pizza_name": "직화홀릭바이트피자",
@@ -198,7 +216,8 @@
 		"직화불고기",
 		"홀그레인 머스터드",
 		"고구마무스"
-	]
+	],
+	"image": "school_fire_holic_bite.png"
 },{
 	"brand": "피자스쿨",
 	"pizza_name": "야채퀘사디아피자",
@@ -209,7 +228,8 @@
 		"양파",
 		"청피망",
 		"또띠아"
-	]
+	],
+	"image": "school_quesa_vegi.jpg"
 },{
 	"brand": "피자스쿨",
 	"pizza_name": "치킨퀘사디아피자",
@@ -219,7 +239,8 @@
 	"topping": [
 		"핫앤스위트치킨",
 		"또띠아"
-	]
+	],
+	"image": "school_quesa_chicken.jpg"
 },{
 	"brand": "피자스쿨",
 	"pizza_name": "비프퀘사디아피자",
@@ -229,7 +250,8 @@
 	"topping": [
 		"불고기타코미트",
 		"또띠아"
-	]
+	],
+	"image": "school_quesa_beef.jpg"
 },{
 	"brand": "피자스쿨",
 	"pizza_name": "떡갈비피자",
@@ -240,7 +262,8 @@
 		"떡갈비",
 		"피망",
 		"스테이크소스"
-	]
+	],
+	"image": "school_tteokgalbi.jpg"
 },{
 	"brand": "피자스쿨",
 	"pizza_name": "닭안심살피자",
@@ -251,5 +274,6 @@
 		"닭안심살",
 		"칠리소스",
 		"청피망"
-	]
+	],
+	"image": "school_chicken_a.jpg"
 }]

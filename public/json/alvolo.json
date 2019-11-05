@@ -8,7 +8,8 @@
 		"직화 간장 불고기",
 		"고추장 불고기",
 		"바베큐 소스"
-	]
+	],
+	"image": "avolo_jeonjubulbaek.jpg"
 },{
 	"brand": "피자알볼로",
 	"pizza_name": "꿈을피자",
@@ -20,7 +21,8 @@
 		"불고기",
 		"크렌베리",
 		"해남산 고구마"
-	]
+	],
+	"image": "avolo_dream.png"
 },{
 	"brand": "피자알볼로",
 	"pizza_name": "부산피자",
@@ -32,7 +34,8 @@
 		"낙지",
 		"갑오징어",
 		"갈릭새우"
-	]
+	],
+	"image": "avolo_busan.png"
 },{
 	"brand": "피자알볼로",
 	"pizza_name": "쉬림프&핫치킨골드피자",
@@ -45,7 +48,8 @@
 		"스파이시치킨",
 		"치즈",
 		"브로콜리"
-	]
+	],
+	"image": "avolo_shrimp_hot.png"
 },{
 	"brand": "피자알볼로",
 	"pizza_name": "단호박골드피자",
@@ -57,7 +61,8 @@
 		"단호박샐러드",
 		"체다치즈",
 		"베이컨"
-	]
+	],
+	"image": "avolo_sweet_pumpkin_gold.jpg"
 },{
 	"brand": "피자알볼로",
 	"pizza_name": "어깨피자",
@@ -74,7 +79,8 @@
 		"베이컨",
 		"올리브",
 		"단호박샐러드"
-	]
+	],
+	"image": "avolo_shoulder.png"
 },{
 	"brand": "피자알볼로",
 	"pizza_name": "단호박피자",
@@ -85,7 +91,8 @@
 		"아몬드",
 		"단호박샐러드",
 		"베이컨"
-	]
+	],
+	"image": "avolo_sweet_pumpkin.jpg"
 },{
 	"brand": "피자알볼로",
 	"pizza_name": "콤비네이션피자",
@@ -99,7 +106,8 @@
 		"카나디언햄",
 		"버섯",
 		"페페로니"
-	]
+	],
+	"image": "avolo_combination.png"
 },{
 	"brand": "피자알볼로",
 	"pizza_name": "더너피자 바베킹",
@@ -111,7 +119,8 @@
 		"파인애플",
 		"스파이시치킨",
 		"웨지감자"
-	]
+	],
+	"image": "avolo_babeking.jpg"
 },{
 	"brand": "피자알볼로",
 	"pizza_name": "웃음꽃피자",
@@ -122,7 +131,8 @@
 		"치킨탑핑",
 		"그라나파다노",
 		"살라미"
-	]
+	],
+	"image": "avolo_smile_flower.jpg"
 },{
 	"brand": "피자알볼로",
 	"pizza_name": "고구마골드피자",
@@ -134,7 +144,8 @@
 		"베이컨",
 		"고구마샐러드",
 		"아몬드"
-	]
+	],
+	"image": "avolo_sweet_potato_gold.jpg"
 },{
 	"brand": "피자알볼로",
 	"pizza_name": "목동피자",
@@ -148,7 +159,8 @@
 		"버섯",
 		"임실치즈",
 		"페페로니"
-	]
+	],
+	"image": "avolo_mokdong.jpg"
 },{
 	"brand": "피자알볼로",
 	"pizza_name": "고르곤졸라",
@@ -158,7 +170,8 @@
 	"topping": [
 		"고르곤졸라치즈",
 		"치즈"
-	]
+	],
+	"image": "avolo_gorgonzola.jpg"
 },{
 	"brand": "피자알볼로",
 	"pizza_name": "포테이토피자",
@@ -169,7 +182,8 @@
 		"베이컨",
 		"치즈",
 		"웨지감자"
-	]
+	],
+	"image": "avolo_potato.png"
 },{
 	"brand": "피자알볼로",
 	"pizza_name": "베이컨체다치즈피자",
@@ -180,7 +194,8 @@
 		"베이컨",
 		"체다치즈",
 		"치즈"
-	]
+	],
+	"image": "avolo_bacon_cheese.png"
 },{
 	"brand": "피자알볼로",
 	"pizza_name": "불고기피자",
@@ -192,7 +207,8 @@
 		"치즈",
 		"생불고기",
 		"양파"
-	]
+	],
+	"image": "avolo_bulgogi.png"
 },{
 	"brand": "피자알볼로",
 	"pizza_name": "야채피자",
@@ -204,7 +220,8 @@
 		"피망",
 		"버섯",
 		"옥수수"
-	]
+	],
+	"image": "avolo_vegi.png"
 },{
 	"brand": "피자알볼로",
 	"pizza_name": "하와이안피자",
@@ -214,7 +231,8 @@
 	"topping": [
 		"카나디언햄",
 		"파인애플"
-	]
+	],
+	"image": "avolo_hawaiian.png"
 },{
 	"brand": "피자알볼로",
 	"pizza_name": "페페로니피자",
@@ -224,7 +242,8 @@
 	"topping": [
 		"치즈",
 		"페페로니"
-	]
+	],
+	"image": "avolo_pepperoni.png"
 },{
 	"brand": "피자알볼로",
 	"pizza_name": "치즈피자",
@@ -233,7 +252,8 @@
 	"calorie": "1240",
 	"topping": [
 		"치즈"
-	]
+	],
+	"image": "avolo_cheese.png"
 },{
 	"brand": "피자알볼로",
 	"pizza_name": "고구마피자",
@@ -245,7 +265,8 @@
 		"베이컨",
 		"체다치즈",
 		"아몬드"
-	]
+	],
+	"image": "avolo_sweetpotato.jpg"
 },{
 	"brand": "피자알볼로",
 	"pizza_name": "핫&스파이시치킨피자",
@@ -255,7 +276,8 @@
 	"topping": [
 		"스파이시치킨",
 		"할라피뇨"
-	]
+	],
+	"image": "avolo_hot_spicy.jpg"
 },{
 	"brand": "피자알볼로",
 	"pizza_name": "콰트로포르마지오",
@@ -267,7 +289,8 @@
 		"아몬드",
 		"그라나파다노",
 		"에멘탈치즈"
-	]
+	],
+	"image": "avolo_four_cheese.png"
 },{
 	"brand": "피자알볼로",
 	"pizza_name": "스위트가든골드피자",
@@ -278,7 +301,8 @@
 		"페페로니",
 		"파인애플",
 		"살라미"
-	]
+	],
+	"image": "avolo_sweet_garden.jpg"
 },{
 	"brand": "피자알볼로",
 	"pizza_name": "쉬림프&안심골드피자",
@@ -290,7 +314,8 @@
 		"차슈스테이크",
 		"브로콜리",
 		"치즈"
-	]
+	],
+	"image": "avolo_shrimp_and_gold.png"
 },{
 	"brand": "피자알볼로",
 	"pizza_name": "울트라코리안골드피자",
@@ -301,7 +326,8 @@
 		"허브갈릭감자",
 		"살라미",
 		"생불고기"
-	]
+	],
+	"image": "avolo_ultra_korean.jpg"
 },{
 	"brand": "피자알볼로",
 	"pizza_name": "이탈리안통감자골드피자",
@@ -312,5 +338,6 @@
 		"베이컨",
 		"허브갈릭감자",
 		"부어스첸 소시지"
-	]
+	],
+	"image": "avolo_italy_potato.jpg"
 }]

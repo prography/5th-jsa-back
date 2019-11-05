@@ -13,7 +13,7 @@ router.get('/:id', (req, res, next) => {
     res.json('피자 상세 정보');
 });
 
-router.get("/topping/append/:brand", async (req, res, next)=>{
+router.get("/topping/append/:brand", (req, res, next)=>{
     let brand = req.params.brand;
     const file = `public/json/${brand}.json`;
     console.log("나는 바보에요...", file);
@@ -30,12 +30,11 @@ router.get("/topping/append/:brand", async (req, res, next)=>{
                 pizzaAppend.toppings = obj[i].topping;
                 pizzaAppend.details = obj[i].short_info;
     
-                await pizzaAppend.save(function(err, res){
+                pizzaAppend.save(function(err, res){
                     if(err){
                         return console.error(err);
                     }else{
                         console.log("성공", res);
-                        
                     }
                 });
             }
