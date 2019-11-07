@@ -16,6 +16,10 @@ const SubclassSchema = new Schema({
     image: {
         type: String,
         required: true,
+    },
+    resultImage:{
+        type: String,
+        required: true
     }
 });
 
