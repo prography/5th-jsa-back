@@ -15,6 +15,7 @@ const router = Router();
 // });
 
 router.get("/topping", (req, res, next) =>{
+    const json = `public/json/toppings.json`;
     jsonfile.readFile(json, function(err, obj){
         if(err){
             console.log("error", err);
