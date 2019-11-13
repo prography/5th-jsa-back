@@ -15,7 +15,7 @@ const router = Router();
 
 router.get("/", pizzaService.readToppings);
 router.get("/result", pizzaService.readTopping);
-
+router.post("/find", pizzaService.findPizza);
 
 
 module.exports = router;

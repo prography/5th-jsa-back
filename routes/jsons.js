@@ -35,9 +35,10 @@ router.get("/topping", (req, res, next) => {
 })
 
 // 피자 정보 DB 추가
-router.get("/topping/append/:brand", (req, res, next) => {
+router.get("/topping/append/:brand", async (req, res, next) => {
     let brand = req.params.brand;
     const file = `public/json/${brand}.json`;
+    const last = `public/json/lastObject.json`;
     console.log("나는 바보에요...", file);
     jsonfile.readFile(file, function (err, obj) {
         if (err) {
@@ -50,17 +51,33 @@ router.get("/topping/append/:brand", (req, res, next) => {
                 pizzaAppend.m_price = obj[i].price;
                 pizzaAppend.m_cal = obj[i].calorie;
                 pizzaAppend.toppings = obj[i].topping;
-                const aws = "https://jsa-img.s3.ap-northeast-2.amazonaws.com/pizza/"
-                const path = aws + obj[i].image;
-                pizzaAppend.image = path;
-                pizzaAppend.details = obj[i].short_info;
-                pizzaAppend.save(function (err, res) {
-                    if (err) {
-                        return console.error(err);
-                    } else {
-                        console.log("성공", res);
-                    }
-                });
+                let arrTopping = obj[i].topping;
+                let subArr = [];
+                jsonfile.readFile(last, function (err, datas) {
+                    datas.forEach(data => {
+
+                        if (arrTopping.includes(data.origin)) {
+                            if (!subArr.includes(data.integration)) {
+                                subArr.push(data.integration)
+                            }
+                        }
+                    })
+                    pizzaAppend.subclasses = subArr;
+                    //pizzaAppend.subclasses 
+                    const aws = "https://jsa-img.s3.ap-northeast-2.amazonaws.com/pizza/"
+                    const path = aws + obj[i].image;
+                    pizzaAppend.image = path;
+                    pizzaAppend.details = obj[i].short_info;
+                    pizzaAppend.save(function (err, res) {
+                        if (err) {
+                            return console.error(err);
+                        } else {
+                            console.log("성공", res);
+                        }
+                    });
+                })
+
+
             }
         }
 
