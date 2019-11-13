@@ -11,7 +11,7 @@ const toppingSchema = new Schema({
     subclass: {
         type: ObjectId,
         required: true,
-        ref: 'Subclass',
+        ref: 'subclass',
     }
 });
 
