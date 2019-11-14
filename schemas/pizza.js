@@ -28,7 +28,12 @@ const pizzaSchema = new Schema({
         type: Array,
         required: true,
         default: [],
-    },
+    }, 
+    subclasses:{
+        type: Array,
+        required: true,
+        default: []
+    }, 
     image: {
         type: String,
     },

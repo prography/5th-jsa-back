@@ -34,7 +34,7 @@ router.get('/details/:id', async (req, res, next) => { // 피자 상세 정보
 
 router.get("/toppings", pizzaService.readToppings);
 router.get("/result", pizzaService.readTopping);
-
+router.post("/find", pizzaService.findPizza);
 
 
 module.exports = router;

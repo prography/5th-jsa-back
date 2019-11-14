@@ -1,5 +1,6 @@
 import pizza from '../schemas/pizza';
 import subClass from '../schemas/subclass';
+import topping from '../schemas/topping';
 
 const readToppings = async (req, res) =>{
     const meat = []; 
@@ -54,7 +55,13 @@ const readTopping = async(req, res) =>{
     })
 }
 
+const findPizza = async(req, res, next)=>{
+    
+    
+}
+
 module.exports = {
     readToppings,
-    readTopping
+    readTopping,
+    findPizza
 }
