@@ -68,7 +68,6 @@ router.get("/topping/append/:brand", (req, res, next) => {
     res.json({ result: "성공했으면 좋겠다" });
 })
 
-
 router.get("/last", (req, res, next) => {
     const json = `public/json/lastObject.json`;
     jsonfile.readFile(json, function (err, obj) {

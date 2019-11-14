@@ -19,7 +19,12 @@ const pizzaSchema = new Schema({
         type: Number,
         required: true,
     },
-    toppings: {
+    toppings: { 
+        type: Array,
+        required: true,
+        default: [],
+    },
+    subclasses: {
         type: Array,
         required: true,
         default: [],
