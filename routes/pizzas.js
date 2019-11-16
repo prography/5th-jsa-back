@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import Pizza from '../schemas/pizza';
 import pizzaService from '../services/pizzaService';
-import subClass from '../schemas/subclass';
+import Subclass from '../schemas/subclass';
 
 const router = Router();
 

@@ -1,6 +1,6 @@
-import pizza from '../schemas/pizza';
-import subClass from '../schemas/subclass';
-import topping from '../schemas/topping';
+import Pizza from '../schemas/pizza';
+import SubClass from '../schemas/subclass';
+import Topping from '../schemas/topping';
 
 const readToppings = async (req, res) =>{
     const meat = []; 
@@ -9,7 +9,7 @@ const readToppings = async (req, res) =>{
     const cheese = [];
     const sauce = [];
     const etc = [];
-    await subClass.find({},{resultImage:0, __v: 0}, (err, items)=>{
+    await SubClass.find({},{resultImage:0, __v: 0}, (err, items)=>{
         if(err){
             console.log(err);
             res.json({
@@ -39,7 +39,7 @@ const readToppings = async (req, res) =>{
 
 const readTopping = async(req, res) =>{
     const topping = req.query.topping;
-    await subClass.findOne({name: topping},{name:1, resultImage:1}, (err, item)=>{
+    await SubClass.findOne({name: topping},{name:1, resultImage:1}, (err, item)=>{
         if(err){
             console.log(err);
             res.json({
@@ -51,7 +51,6 @@ const readTopping = async(req, res) =>{
                 result: item
             })
         }
-        
     })
 }
 
