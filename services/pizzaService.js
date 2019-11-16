@@ -32,8 +32,8 @@ const recommandPizzas = async (req, res, next) => {
 
 const getDetails = async (req, res, next) => {
     try {
-        const pizza = await Pizza.find({ _id: req.params.id });
-        res.json(pizza);
+        const pizza = await Pizza.find({ _id: req.params.id }, {subclasses: 0, __v: 0});
+        res.json(pizza[0]);
     } catch (error) {
         console.error(error);
         next(error);
@@ -92,13 +92,10 @@ const readTopping = async(req, res) =>{
     })
 }
 
-const findPizza = async(req, res, next)=>{
-    
-    
-}
 
 module.exports = {
+    recommandPizzas,
+    getDetails,
     readToppings,
-    readTopping,
-    findPizza
+    readTopping
 }
