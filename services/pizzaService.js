@@ -32,7 +32,7 @@ const recommandPizzas = async (req, res, next) => {  // 피자 추천 api
 
 const getDetails = async (req, res, next) => { // 피자 상세 정보
     try {
-        const pizza = await Pizza.find({ _id: req.params.id });
+        const pizza = await Pizza.find({ _id: req.params.id }, {subclasses:0, __v:0});
         res.json(pizza[0]);
     } catch (error) {
         console.error(error);
@@ -85,6 +85,6 @@ const getToppingImage = async(req, res) =>{
 module.exports = {
     recommandPizzas,
     getDetails,
-    readToppings,
-    readTopping,
+    getToppings,
+    getToppingImage,
 }
