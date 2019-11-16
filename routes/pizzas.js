@@ -8,14 +8,27 @@ const router = Router();
 router.post('/recomandations', async (req, res, next) => {
     try {
         const recomandations = [];
-        const items = req.body.items;        
-        const pizzas = await Pizza.find({});
+        let items = req.body.items;
+        if(!items){
+            return res.json({
+                result: "no item"
+            })
+        }
+        console.log(items);
+        items = JSON.parse(items);    
+        const pizzas = await Pizza.find({},{brand:1, name:1, m_price:1, m_cal:1, subclasses:1, image: 1});
         pizzas.forEach(pizza => {
-            if (pizza.subClasses.every(x => items.indexOf(x) !== -1)) {
+            if (items.every(x => pizza.subclasses.indexOf(x) !== -1)) {
+                console.log(pizza.name)
+                pizza.subclasses = undefined
                 recomandations.push(pizza);
             }
         });
-        res.json(recomandations);
+        let pizzaNum = recomandations.length;
+        res.json({
+            num: pizzaNum,
+            pizzas:recomandations
+        });
     } catch (error) {
         console.error(error);
         next(error);
