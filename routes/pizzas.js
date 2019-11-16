@@ -9,6 +9,12 @@ router.post('/recomandations', async (req, res, next) => {
     try {
         const recomandations = [];
         let items = req.body.items;
+        if(!items){
+            return res.json({
+                result: "no item"
+            })
+        }
+        console.log(items);
         items = JSON.parse(items);    
         const pizzas = await Pizza.find({},{brand:1, name:1, m_price:1, m_cal:1, subclasses:1, image: 1});
         pizzas.forEach(pizza => {
