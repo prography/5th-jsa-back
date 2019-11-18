@@ -7,6 +7,7 @@ import createError from 'http-errors';
 import passport from 'passport';
 import dotenv from 'dotenv';
 import flash from 'connect-flash';
+import cors from 'cors';
 
 import connect from './schemas';
 import routes from './routes';
@@ -34,6 +35,7 @@ app.use(session({
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(cors())
 
 app.use(routes);
 
