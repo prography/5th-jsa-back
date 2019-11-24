@@ -36,8 +36,16 @@ app.use(flash());
 app.use(passport.initialize());
 // app.use(passport.session());
 app.use(cors())
-
-
+/////// 테스트 용
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+app.use(express.static('public'));
+app.get("/", (req, res)=>{
+  console.log("연결!")
+  res.render("kakao.html")
+})
+//////
 app.use(routes);
 
 app.use(function(req, res, next) {
