@@ -14,6 +14,7 @@ const recommandPizzas = async (req, res, next) => {  // 피자 추천 api
                 result: "no item"
             });
         }
+        console.log("테스트 성공")
         const items = item.split(",");   
         console.log(items) 
         const pizzas = await Pizza.find({},{brand:1, name:1, m_price:1, m_cal:1, subclasses:1, image: 1});
