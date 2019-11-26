@@ -6,15 +6,16 @@ const recommandPizzas = async (req, res, next) => {  // 피자 추천 api
     try {
         const recomandations = [];
         
-        let items = req.body.items;
+        let item = req.body.items;
         //console.log(items);
-        console.log(req)
-        if(!items){
+        console.log(req.body)
+        if(!item){
             return res.json({
                 result: "no item"
             });
         }
-        items = JSON.parse(items);    
+        const items = item.split(",");   
+        console.log(items) 
         const pizzas = await Pizza.find({},{brand:1, name:1, m_price:1, m_cal:1, subclasses:1, image: 1});
         pizzas.forEach(pizza => {
             if (items.every(x => pizza.subclasses.indexOf(x) !== -1)) {
