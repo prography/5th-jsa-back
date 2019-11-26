@@ -8,6 +8,7 @@ import passport from 'passport';
 import dotenv from 'dotenv';
 import flash from 'connect-flash';
 import cors from 'cors';
+import bodyParser from 'body-parser';
 
 import connect from './schemas';
 import routes from './routes';
@@ -20,8 +21,9 @@ passportConfig(passport);
 
 app.use(logger('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(cookieParser(process.env.COOKIE_SECRET));
 // app.use(session({
 //   resave: false,

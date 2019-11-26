@@ -5,7 +5,10 @@ import Topping from '../schemas/topping';
 const recommandPizzas = async (req, res, next) => {  // 피자 추천 api
     try {
         const recomandations = [];
+        
         let items = req.body.items;
+        //console.log(items);
+        console.log(req)
         if(!items){
             return res.json({
                 result: "no item"
