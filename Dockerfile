@@ -12,8 +12,8 @@ ARG PROJECT_DIR=/path/to/project
 ##########################################################
 # install dependencies
 ##########################################################
-COPY package.json ${PROJECT_DIR}/package.json
-COPY package-lock.json ${PROJECT_DIR}/package-lock.json
+COPY ./package.json ${PROJECT_DIR}/package.json
+COPY ./package-lock.json ${PROJECT_DIR}/package-lock.json
 
 ##########################################################
 # set working directory
