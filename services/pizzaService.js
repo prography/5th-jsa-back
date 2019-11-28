@@ -68,7 +68,7 @@ const getToppings = async (req, res, next) =>{ // 토핑 리스트 보내주기
 }
 
 
-const getToppingImage = async(req, res) =>{
+const getToppingImage = async(req, res, next) =>{
     try {
         const topping = req.query.topping;
         const item = await SubClass.findOne(

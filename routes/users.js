@@ -39,7 +39,7 @@ router.post('/register', (req, res)=>{
         })
       }
     })
-})
+});
 
 router.post('/login', (req, res)=>{
   const email = req.body.email;
@@ -76,7 +76,7 @@ router.post('/login', (req, res)=>{
           }
         })
     })
-})
+});
 
 router.get('/current', passport.authenticate('jwt', { session: false }), (req, res)=>{
   res.json({
@@ -84,7 +84,7 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
     email: req.user.email,
     nickname: req.user.nickname
   })
-})
+});
 
 router.get('/', (req, res, next) => {
   res.sned('마이페이지');
