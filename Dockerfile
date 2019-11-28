@@ -9,13 +9,6 @@ ENV HOST 0.0.0.0
 ##########################################################
 ARG PROJECT_DIR=/path/to/project
 
-
-##########################################################
-# move project files to project directory
-##########################################################
-COPY . ${PROJECT_DIR}
-
-
 ##########################################################
 # install dependencies
 ##########################################################
@@ -27,6 +20,11 @@ COPY package-lock.json ${PROJECT_DIR}/package-lock.json
 ##########################################################
 WORKDIR ${PROJECT_DIR}
 RUN yarn install
+
+##########################################################
+# move project files to project directory
+##########################################################
+COPY . ${PROJECT_DIR}
 
 ##########################################################
 # expose port for single container(Elastic Beanstalk)
