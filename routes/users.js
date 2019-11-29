@@ -5,11 +5,23 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 import passport from 'passport';
-dotenv.config();
+import Feedback from '../schemas/feedback';
 
+dotenv.config();
 const router = Router();
 
 // router.use(isLoggedIn);
+
+router.post('/feedback', async (req, res, next) => {
+  try {
+    const feedback = new Feedback({ content : req.body.content });
+    await feedback.save();
+    res.send('OK');
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+});
 
 router.post('/register', (req, res)=>{
   console.log("test1")
