@@ -16,7 +16,9 @@ router.post('/feedback', async (req, res, next) => {
   try {
     const feedback = new Feedback({ content : req.body.content });
     await feedback.save();
-    res.send('OK');
+    res.json({
+      result: "ok"
+    })
   } catch (error) {
     console.error(error);
     next(error);
