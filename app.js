@@ -2,7 +2,7 @@ import express from 'express';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import path from 'path';
-import session from 'express-session';
+// import session from 'express-session';
 import createError from 'http-errors';
 import passport from 'passport';
 import dotenv from 'dotenv';
