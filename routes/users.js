@@ -49,17 +49,12 @@ router.post('/register', (req, res) => {
           nickname: req.body.nickname
         });
         newUser.save()
-          .then(user => res.json(user))
-          .catch(err => console.log(err));
-
-        // bcrypt.genSalt(10, (err, salt) =>{
-        //   bcrypt.hash(newUser.password, salt, (err, hash)=>{
-        //     if(err) throw err;
-
-        //     newUser.password = hash;
-
-        //   })
-        // })
+          .then(user => res.json({
+            result: "success"
+          }))
+          .catch(error => res.json({
+            result: "fail"
+          }));
       }
     })
 });
@@ -72,9 +67,8 @@ router.post('/login', (req, res) => {
   User.findOne({ email })
     .then(user => {
       if (!user) {
-        const result = "해당하는 회원이 존재하지 않습니다.";
         res.json({
-          result: result
+          result: "No email"
         })
       }
 
@@ -99,14 +93,13 @@ router.post('/login', (req, res) => {
 
         jwt.sign(payload, `${process.env.secretKey}`, { expiresIn: 3600 }, (err, token) => {
           res.json({
-            success: true,
+            success: "success",
             token: 'Bearer ' + token
           })
         });
       } else {
-        const result = "패스워드가 일치하지 않습니다.";
         res.json({
-          result: result
+          result: "false"
         })
       }
     })
