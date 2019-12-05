@@ -5,6 +5,7 @@ const router = Router();
 
 router.post("/recomandations", pizzaService.recommandPizzas);
 router.get("/details/:id", pizzaService.getDetails);
+router.get("/random", pizzaService.randomPizza);
 router.get("/toppings", pizzaService.getToppings);
 router.get("/toppings/image", pizzaService.getToppingImage);
 

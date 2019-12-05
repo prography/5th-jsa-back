@@ -41,6 +41,23 @@ const getDetails = async (req, res, next) => { // 피자 상세 정보
     }
 }
 
+const randomPizza = async (req, res, next) =>{
+    try{
+        const pizza = await Pizza.find({}, { subclasses:0, __v:0 });
+        let len = pizza.length;
+        console.log(len);
+        let randomNum = Math.floor(Math.random() * len);
+        let ranPizza = pizza[randomNum];
+        res.json({
+            random: ranPizza
+        })
+
+    }catch (error) {
+        console.log(error);
+        next(error);
+    }
+}
+
 const getToppings = async (req, res, next) =>{ // 토핑 리스트 보내주기
     try {
         const meat = []; 
@@ -86,6 +103,7 @@ const getToppingImage = async(req, res, next) =>{
 module.exports = {
     recommandPizzas,
     getDetails,
+    randomPizza,
     getToppings,
     getToppingImage,
 }
