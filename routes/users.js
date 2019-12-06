@@ -6,6 +6,7 @@ import dotenv from 'dotenv';
 import passport from 'passport';
 import Feedback from '../schemas/feedback';
 import crypto from 'crypto';
+import userService from '../services/userService';
 
 dotenv.config();
 const router = Router();
@@ -31,7 +32,7 @@ router.post('/register', (req, res) => {
     .then(user => {
       if (user) {
         return res.status(400).json({
-          email: "해당 이메일을 가진 사용자가 존재합니다."
+          email: "User already exists"
         })
       } else {
         // var ciphers = crypto.getCiphers();
@@ -76,10 +77,10 @@ router.post('/login', (req, res) => {
         'aes-256-cbc',
         `${process.env.secretKey}`
       )
-      
+
       let comparePass = cryptoPass.update(password, 'utf8', 'base64');
       comparePass += cryptoPass.final('base64');
-        
+
       console.log(comparePass);
       console.log(user.password)
       //패스워드 확인
@@ -94,7 +95,7 @@ router.post('/login', (req, res) => {
         jwt.sign(payload, `${process.env.secretKey}`, { expiresIn: 3600 }, (err, token) => {
           res.json({
             success: "success",
-            token: 'Bearer ' + token
+            token: token
           })
         });
       } else {
@@ -105,13 +106,15 @@ router.post('/login', (req, res) => {
     })
 });
 
-router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
-  res.json({
-    id: req.user.id,
-    email: req.user.email,
-    nickname: req.user.nickname
-  })
-});
+router.get('/check', userService.userCheck);
+
+// router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
+//   res.json({
+//     id: req.user.id,
+//     email: req.user.email,
+//     nickname: req.user.nickname
+//   })
+// });
 
 router.get('/', (req, res, next) => {
   res.sned('마이페이지');

@@ -67,7 +67,7 @@ const getToppings = async (req, res, next) =>{ // 토핑 리스트 보내주기
         const sauce = [];
         const etc = [];
 
-        const items = await await SubClass.find({},{resultImage:0, __v: 0});
+        const items = await SubClass.find({},{resultImage:0, __v: 0});
         items.forEach(item => {
             if(item.category === "meat") meat.push(item);
             else if(item.category === "seafood") seafood.push(item);
