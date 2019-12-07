@@ -46,6 +46,7 @@ const feedbacks = async (req, res, next)=>{
         res.json({
             pnStart: pnStart,
             pnEnd: pnEnd,
+            paging: page,
             pnTotal: pnTotal,
             feedbacks: feedback
         })
