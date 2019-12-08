@@ -4,16 +4,25 @@ import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 import passport from 'passport';
 import Feedback from '../schemas/feedback';
+import Comment from '../schemas/comment';
 
 const dashboard = async (req, res, next) =>{
     try{
         const users = await User.count();
         const pizzas = await Pizza.count();
         const feedbacks = await Feedback.count();
+        const comments = await Comment.count();
+        let skip = 0;
+        if(comments > 10){
+            skip = comments - 10;
+        }
+        const newComments = await Comment.find({}, { _id:0, __v:0 }).skip(skip);
+        console.log(comments);
         res.json({
             users: users,
             pizzas: pizzas,
-            feedbacks: feedbacks
+            feedbacks: feedbacks,
+            comments: newComments
         })
     }catch(error){
         console.log(error);
