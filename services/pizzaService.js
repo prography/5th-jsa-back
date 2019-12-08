@@ -1,6 +1,56 @@
 import Pizza from '../schemas/pizza';
 import SubClass from '../schemas/subclass';
 import Topping from '../schemas/topping';
+import User from '../schemas/user';
+import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+const commentPizza = async (req, res, next) =>{
+    try{
+        let token = req.headers.authorization
+        
+        jwt.verify(token, `${process.env.secretKey}`, async function (err, decoded){
+            if(!err){
+                let id = decoded.id;
+                const user = await User.findOne({ _id: id }, {});
+                const nickname = user.nickname;
+                let pizzaId = req.body.pizza;
+                const pizza = await Pizza.findById({_id:pizzaId})
+                let comment = req.body.comment;
+
+                const newComment = {
+                    user: nickname,
+                    text: comment
+                }
+
+                pizza.comments.unshift(newComment);
+                pizza.save(function(err, result){
+                    if(err){
+                        console.log(err);
+                        return res.json({
+                            result: "false"
+                        })
+                    }else{
+                        console.log("test 성공");
+                        return res.json({
+                            comments: pizza.comments
+                        })
+                    }
+                })
+                
+            }else{
+                res.json({
+                    result: "must login"
+                })
+            }
+        })
+    }catch(err){
+        console.log(err);
+        next(err);
+    }
+}
 
 const recommandPizzas = async (req, res, next) => {  // 피자 추천 api
     try {
@@ -101,6 +151,7 @@ const getToppingImage = async(req, res, next) =>{
 
 
 module.exports = {
+    commentPizza,
     recommandPizzas,
     getDetails,
     randomPizza,

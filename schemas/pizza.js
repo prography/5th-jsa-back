@@ -34,7 +34,23 @@ const pizzaSchema = new Schema({
     },
     details: {
         type: String,
-    }
+    },
+    comments: [
+        {
+            user: {
+                type: String,
+                required: true
+            },
+            text: {
+                type: String,
+                required: true
+            },
+            date: {
+                type: Date,
+                default: Date.now
+            }
+        }
+    ]
 });
 
 module.exports = mongoose.model('Pizza', pizzaSchema);
