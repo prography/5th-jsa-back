@@ -3,6 +3,7 @@ import pizzaService from '../services/pizzaService';
 
 const router = Router();
 
+router.post("/comments", pizzaService.commentPizza);
 router.post("/recomandations", pizzaService.recommandPizzas);
 router.get("/details/:id", pizzaService.getDetails);
 router.get("/random", pizzaService.randomPizza);
