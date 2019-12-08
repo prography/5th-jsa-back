@@ -2,6 +2,7 @@ import Pizza from '../schemas/pizza';
 import SubClass from '../schemas/subclass';
 import Topping from '../schemas/topping';
 import User from '../schemas/user';
+import Comment from '../schemas/comment';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 
@@ -19,6 +20,18 @@ const commentPizza = async (req, res, next) =>{
                 let pizzaId = req.body.pizza;
                 const pizza = await Pizza.findById({_id:pizzaId})
                 let comment = req.body.comment;
+                const commentAppend = new Comment();
+                commentAppend.user = nickname;
+                commentAppend.text = comment;
+                commentAppend.pizzaId = pizzaId;
+                commentAppend.save(function (err, row){
+                    if(err){
+                        console.log(err);
+                        res.json({
+                            result: "save error"
+                        })
+                    }
+                })
 
                 const newComment = {
                     user: nickname,
