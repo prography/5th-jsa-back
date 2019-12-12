@@ -50,7 +50,12 @@ const pizzaSchema = new Schema({
                 default: Date.now
             }
         }
-    ]
+    ],
+    likes: {
+        type: Array,
+        required: true,
+        default: [],
+    }
 });
 
 module.exports = mongoose.model('Pizza', pizzaSchema);

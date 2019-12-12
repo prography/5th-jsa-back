@@ -5,7 +5,4 @@ const router = Router();
 router.get('/dashboard', adminService.dashboard);
 router.get('/feedbacks', adminService.feedbacks);
 
-
-
-
 module.exports = router;

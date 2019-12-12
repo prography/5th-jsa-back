@@ -8,6 +8,30 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+const like = async (req, res, next) => {
+    try {
+        await Pizza.findOneAndUpdate(
+            { idx: req.params.id }, { $push: {likes: req.user.email} }
+        );
+        res.send('OK');
+    } catch (error) {
+        console.error(error);
+        next(error);
+    }
+}
+
+const unlike = async (req, res, next) => {
+    try {
+        await Pizza.findOneAndUpdate(
+            { idx: req.params.id }, { $pullAll: { likes: [req.user.email] } } 
+        );
+        res.send('OK');
+    } catch (error) {
+        console.error(error);
+        next(error);
+    }
+}
+
 const commentPizza = async (req, res, next) =>{
     try{
         let token = req.headers.authorization
@@ -170,4 +194,6 @@ module.exports = {
     randomPizza,
     getToppings,
     getToppingImage,
+    like,
+    unlike,
 }
