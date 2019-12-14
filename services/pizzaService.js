@@ -74,14 +74,12 @@ const recommandPizzas = async (req, res, next) => {  // 피자 추천 api
         if(!page){
             page = 1;
         }
-        console.log(page)
         if (!item) {
             return res.json({
                 result: "no item"
             });
         }
         const items = item.split(",");
-        console.log(items);
         const pizzas = await Pizza.find({}, { brand: 1, name: 1, m_price: 1, m_cal: 1, subclasses: 1, image: 1 });
         pizzas.forEach(pizza => {
             if (items.some(x => pizza.subclasses.indexOf(x) !== -1)) {
@@ -108,10 +106,15 @@ const recommandPizzas = async (req, res, next) => {  // 피자 추천 api
         recomandations.sort(function(a,b){
             return a.correctTopping < b.correctTopping ? 1 : a.correctTopping>b.correctTopping ? -1 : 0;
         })
+        let limit = 10;
+        let startPaging = (page-1) * limit;
+        let lastPaging = limit * page;
+        const sliceRecomandations = recomandations.slice(startPaging, lastPaging);
+        console.log(sliceRecomandations.length)
         res.json({
             toppings: items.length,
             num: pizzaNum,
-            pizzas: recomandations
+            pizzas: sliceRecomandations
         });
     } catch (error) {
         console.error(error);
