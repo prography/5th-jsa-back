@@ -5,8 +5,34 @@ import User from '../schemas/user';
 import Comment from '../schemas/comment';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
+import { request } from 'express';
 
 dotenv.config();
+
+function getKakaoToken(access_token){
+    let headers = {
+        'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
+        'Authorization': 'Bearer '+ access_token
+    }
+
+    let options = {
+        url: 'https://kapi/kakao.com/v1/user/access_token_info',
+        method: 'GET',
+        headers: headers,
+    }
+
+    request(options, async function(err, res, body){
+        let jsonObj;
+        if(!err && res.statusCode === 200){
+            jsonObj = JSON.parse(body);
+            console.log(jsonObj);
+        }else if(err){
+            console.log("error", err);
+        }else{
+            console.log("뭔 케이스?");
+        }
+    })
+}
 
 const commentPizza = async (req, res, next) => {
     try {
