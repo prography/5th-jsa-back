@@ -34,6 +34,16 @@ function getKakaoToken(access_token){
     })
 }
 
+const likePizza = async (req, res, next) =>{
+    try{
+        const pizza = await Pizza.findById({ _id: pizzaId });
+
+    }catch(err){
+        console.log(err);
+        next(err);
+    }
+}
+
 const commentPizza = async (req, res, next) => {
     try {
         let token = req.headers.authorization

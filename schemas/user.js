@@ -22,6 +22,10 @@ const userSchema = new Schema({
         required: true,
         default: [],
     },
+    like: {
+        type: Array,
+        default: [],
+    },
     provider: {
         type: String,
         required: true,
