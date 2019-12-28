@@ -5,38 +5,41 @@ import User from '../schemas/user';
 import Comment from '../schemas/comment';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
-import { request } from 'express';
+import request from 'request-promise-native';
 
 dotenv.config();
 
-function getKakaoToken(access_token){
+const getKakaoToken = async function(access_token){
     let headers = {
         'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
         'Authorization': 'Bearer '+ access_token
     }
 
     let options = {
-        url: 'https://kapi/kakao.com/v1/user/access_token_info',
+        url: 'https://kapi.kakao.com/v2/user/me',
         method: 'GET',
         headers: headers,
     }
 
-    request(options, async function(err, res, body){
+    const kakaoResult = await request(options, (err, res, body) =>{
         let jsonObj;
-        if(!err && res.statusCode === 200){
+        if(!err){
             jsonObj = JSON.parse(body);
             console.log(jsonObj);
-        }else if(err){
-            console.log("error", err);
         }else{
-            console.log("뭔 케이스?");
+            console.log("error", err);
+            jsonObj = "error"
         }
+        return jsonObj;
     })
+    return kakaoResult;
 }
 
 const likePizza = async (req, res, next) =>{
     try{
-        const pizza = await Pizza.findById({ _id: pizzaId });
+        const test = await getKakaoToken("DHVZwLniQsrDyXaT31SRwbgzccjP6mHFCEOQ0QopdbIAAAFvS0evhA");
+        console.log(test);
+        res.json(test);
 
     }catch(err){
         console.log(err);
@@ -228,6 +231,7 @@ const getToppingImage = async (req, res, next) => {
 
 
 module.exports = {
+    likePizza,
     commentPizza,
     recommandPizzas,
     getDetails,
