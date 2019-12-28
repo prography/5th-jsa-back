@@ -1,10 +1,16 @@
 import User from '../schemas/user';
 import Pizza from '../schemas/pizza';
-import jwt from 'jsonwebtoken';
-import dotenv from 'dotenv';
-import passport from 'passport';
 import Feedback from '../schemas/feedback';
 import Comment from '../schemas/comment';
+
+const updateImage = async (req, res, next) => {
+    try {
+        
+    } catch (error) {
+        console.log(error);
+        next(error);
+    }
+}
 
 const dashboard = async (req, res, next) =>{
     try{
