@@ -5,8 +5,21 @@ import User from '../schemas/user';
 import Comment from '../schemas/comment';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
+import request from 'request-promise-native';
 
 dotenv.config();
+
+const likePizza = async (req, res, next) =>{
+    try{
+        const test = await getKakaoToken("DHVZwLniQsrDyXaT31SRwbgzccjP6mHFCEOQ0QopdbIAAAFvS0evhA");
+        console.log(test);
+        res.json(test);
+
+    }catch(err){
+        console.log(err);
+        next(err);
+    }
+}
 
 const commentPizza = async (req, res, next) => {
     try {
@@ -15,7 +28,7 @@ const commentPizza = async (req, res, next) => {
         jwt.verify(token, `${process.env.secretKey}`, async function (err, decoded) {
             if (!err) {
                 let id = decoded.id;
-                const user = await User.findOne({ _id: id }, {});
+                const user = await User.findOne({ kakao: id }, {});
                 const nickname = user.nickname;
                 let pizzaId = req.body.pizza;
                 const pizza = await Pizza.findById({ _id: pizzaId })
@@ -192,6 +205,7 @@ const getToppingImage = async (req, res, next) => {
 
 
 module.exports = {
+    likePizza,
     commentPizza,
     recommandPizzas,
     getDetails,

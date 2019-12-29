@@ -3,14 +3,12 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
 const userSchema = new Schema({
-    email: {
+    kakao: {
         type: String,
-        required: true,
         unique: true,
     },
-    password: {
+    email: {
         type: String,
-        required: true,
     },
     nickname: {
         type: String,
@@ -20,6 +18,10 @@ const userSchema = new Schema({
     baskets: {
         type: Array,
         required: true,
+        default: [],
+    },
+    like: {
+        type: Array,
         default: [],
     },
     provider: {
