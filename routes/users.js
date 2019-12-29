@@ -13,6 +13,10 @@ const router = Router();
 
 // router.use(isLoggedIn);
 
+router.get('/', userService.userKakao);
+router.get('/check', userService.userCheck);
+
+
 router.post('/feedback', async (req, res, next) => {
   try {
     const feedback = new Feedback({ content: req.body.content });
@@ -106,7 +110,6 @@ router.post('/login', (req, res) => {
     })
 });
 
-router.get('/check', userService.userCheck);
 
 // router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
 //   res.json({
@@ -116,9 +119,7 @@ router.get('/check', userService.userCheck);
 //   })
 // });
 
-router.get('/', (req, res, next) => {
-  res.sned('마이페이지');
-});
+
 
 router.post('/like/:id', (req, res, next) => {
   res.json('좋아요');
