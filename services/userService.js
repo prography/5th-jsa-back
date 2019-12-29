@@ -36,7 +36,6 @@ const userKakao = async (req, res, next) =>{
     let kakaoToken = req.headers.kakao;
     let kakao = await getKakaoToken(kakaoToken);
     kakao = JSON.parse(kakao);
-
     const id = kakao.id;
     const email = kakao.kakao_account.email;
     const nickname = kakao.kakao_account.profile.nickname;
@@ -83,8 +82,8 @@ const userCheck = async (req, res, next) =>{
         let token = req.headers.authorization
         jwt.verify(token, `${process.env.secretKey}`, async function (err, decoded) {
           if (!err) {
-            let id = decoded.id;
-            const user = await User.findOne({ _id: id }, {});
+            let kakao = decoded.id;
+            const user = await User.findOne({ kakao: kakao }, {});
             const nickname= user.nickname;
             res.json({
               user: nickname

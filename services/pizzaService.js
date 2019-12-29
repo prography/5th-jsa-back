@@ -9,32 +9,6 @@ import request from 'request-promise-native';
 
 dotenv.config();
 
-const getKakaoToken = async function(access_token){
-    let headers = {
-        'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
-        'Authorization': 'Bearer '+ access_token
-    }
-
-    let options = {
-        url: 'https://kapi.kakao.com/v2/user/me',
-        method: 'GET',
-        headers: headers,
-    }
-
-    const kakaoResult = await request(options, (err, res, body) =>{
-        let jsonObj;
-        if(!err){
-            jsonObj = JSON.parse(body);
-            console.log(jsonObj);
-        }else{
-            console.log("error", err);
-            jsonObj = "error"
-        }
-        return jsonObj;
-    })
-    return kakaoResult;
-}
-
 const likePizza = async (req, res, next) =>{
     try{
         const test = await getKakaoToken("DHVZwLniQsrDyXaT31SRwbgzccjP6mHFCEOQ0QopdbIAAAFvS0evhA");
@@ -54,7 +28,7 @@ const commentPizza = async (req, res, next) => {
         jwt.verify(token, `${process.env.secretKey}`, async function (err, decoded) {
             if (!err) {
                 let id = decoded.id;
-                const user = await User.findOne({ _id: id }, {});
+                const user = await User.findOne({ kakao: id }, {});
                 const nickname = user.nickname;
                 let pizzaId = req.body.pizza;
                 const pizza = await Pizza.findById({ _id: pizzaId })
