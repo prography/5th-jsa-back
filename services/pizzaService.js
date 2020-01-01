@@ -19,15 +19,16 @@ const likePizza = async (req, res, next) => {
                 const user = await User.findOne({ kakao: id }, {});
                 const pizza = await Pizza.findOne({ _id: pizzaId }, {});
                 let like = pizza.like;
-                if(like.includes(user._id)){
+                if(like.includes(user.kakao)){
                     //arr.splice(arr.indexOf("A"),1);
-                    pizza.like.splice(pizza.like.indexOf(user._id), 1)
+                    pizza.like.splice(pizza.like.indexOf(user.kakao), 1);
+                    user.like.splice(user.like.indexOf(pizza._id), 1);
                 }else{
-                    pizza.like.unshift(user._id);
+                    pizza.like.unshift(user.kakao);
+                    user.like.unshift(pizza._id);
                 }
                 await pizza.save();
-                console.log(pizza);
-                console.log(user);
+                await user.save();
                 res.json({
                     like: pizza.like
                 })
