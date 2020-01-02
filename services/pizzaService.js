@@ -9,13 +9,37 @@ import request from 'request-promise-native';
 
 dotenv.config();
 
-const likePizza = async (req, res, next) =>{
-    try{
-        const test = await getKakaoToken("DHVZwLniQsrDyXaT31SRwbgzccjP6mHFCEOQ0QopdbIAAAFvS0evhA");
-        console.log(test);
-        res.json(test);
+const likePizza = async (req, res, next) => {
+    try {
+        let token = req.headers.authorization;
+        let pizzaId = req.headers.pizza;
+        jwt.verify(token, `${process.env.secretKey}`, async function (err, decoded) {
+            if (!err) {
+                let id = decoded.id;
+                const user = await User.findOne({ kakao: id }, {});
+                const pizza = await Pizza.findOne({ _id: pizzaId }, {});
+                let like = pizza.like;
+                if(like.includes(user.kakao)){
+                    //arr.splice(arr.indexOf("A"),1);
+                    pizza.like.splice(pizza.like.indexOf(user.kakao), 1);
+                    user.like.splice(user.like.indexOf(pizza._id), 1);
+                }else{
+                    pizza.like.unshift(user.kakao);
+                    user.like.unshift(pizza._id);
+                }
+                await pizza.save();
+                await user.save();
+                res.json({
+                    like: pizza.like
+                })
+            } else {
+                res.json({
+                    result: "must login"
+                })
+            }
+        })
 
-    }catch(err){
+    } catch (err) {
         console.log(err);
         next(err);
     }
@@ -84,7 +108,7 @@ const recommandPizzas = async (req, res, next) => {  // 피자 추천 api
 
         let item = req.body.items;
         let page = req.body.page;
-        if(!page){
+        if (!page) {
             page = 1;
         }
         if (!item) {
@@ -116,11 +140,11 @@ const recommandPizzas = async (req, res, next) => {  // 피자 추천 api
             }
         });
         let pizzaNum = recomandations.length;
-        recomandations.sort(function(a,b){
-            return a.correctTopping < b.correctTopping ? 1 : a.correctTopping>b.correctTopping ? -1 : 0;
+        recomandations.sort(function (a, b) {
+            return a.correctTopping < b.correctTopping ? 1 : a.correctTopping > b.correctTopping ? -1 : 0;
         })
         let limit = 10;
-        let startPaging = (page-1) * limit;
+        let startPaging = (page - 1) * limit;
         let lastPaging = limit * page;
         const sliceRecomandations = recomandations.slice(startPaging, lastPaging);
         console.log(sliceRecomandations.length)
