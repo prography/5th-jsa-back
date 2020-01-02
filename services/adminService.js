@@ -1,11 +1,27 @@
 import User from '../schemas/user';
 import Pizza from '../schemas/pizza';
+import Subclass from '../schemas/subclass';
 import Feedback from '../schemas/feedback';
 import Comment from '../schemas/comment';
 
-const updateImage = async (req, res, next) => {
+const updateToppingName = async (req, res, next) => {
     try {
-        
+        const id = req.body.id;
+        const name = req.body.name;
+        await Subclass.update( { _id: id }, { name: name });
+        res.send('OK');
+    } catch (error) {
+        console.log(error);
+        next(error);
+    }
+}
+
+const updateToppingCategory = async (req, res, next) => {
+    try {
+        const id = req.body.id;
+        const category = req.body.name;
+        await Subclass.update( { _id: id }, { category: category });
+        res.send('OK');
     } catch (error) {
         console.log(error);
         next(error);
@@ -73,5 +89,7 @@ const feedbacks = async (req, res, next)=>{
 
 module.exports = {
     dashboard,
-    feedbacks
+    feedbacks,
+    updateToppingName,
+    updateToppingCategory,
 }

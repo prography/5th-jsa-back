@@ -5,8 +5,9 @@ const router = Router();
 
 router.get('/dashboard', adminService.dashboard);
 router.get('/feedbacks', adminService.feedbacks);
-router.patch('/image', adminService.updateImage);
-router.patch('/topping', adminService.updateTopping);
+
+router.patch('/toppingName', adminService.updateToppingName);
+router.patch('/toppingCategory', adminService.updateToppingCategory);
 router.delete('/topping', adminService.deleteTopping);
 router.post('/topping', adminService.addTopping);
 router.patch('/category', adminService.updateCategory);
