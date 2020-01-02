@@ -6,9 +6,9 @@ import Comment from '../schemas/comment';
 
 const updateToppingName = async (req, res, next) => {
     try {
-        const id = req.body.id;
-        const name = req.body.name;
-        await Subclass.update( { _id: id }, { name: name });
+        const prev = req.body.prev;
+        const next = req.body.next;
+        await Subclass.updateOne( { name: prev }, { name: next });
         res.send('OK');
     } catch (error) {
         console.log(error);
@@ -18,9 +18,9 @@ const updateToppingName = async (req, res, next) => {
 
 const updateToppingCategory = async (req, res, next) => {
     try {
-        const id = req.body.id;
-        const category = req.body.name;
-        await Subclass.update( { _id: id }, { category: category });
+        const name = req.body.name;
+        const category = req.body.category;
+        await Subclass.updateOne( { name: name }, { category: category });
         res.send('OK');
     } catch (error) {
         console.log(error);
