@@ -4,6 +4,17 @@ import Subclass from '../schemas/subclass';
 import Feedback from '../schemas/feedback';
 import Comment from '../schemas/comment';
 
+const deleteTopping = async (req, res, next) => {
+    try {
+        const name = req.body.name;
+        await Subclass.deleteOne({ name: name });
+        res.send('OK');
+    } catch (error) {
+        console.log(error);
+        next(error);
+    }
+}
+
 const updateToppingName = async (req, res, next) => {
     try {
         const prev = req.body.prev;
@@ -92,4 +103,6 @@ module.exports = {
     feedbacks,
     updateToppingName,
     updateToppingCategory,
+    deleteTopping,
+
 }
