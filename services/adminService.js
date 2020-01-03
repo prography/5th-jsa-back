@@ -135,15 +135,6 @@ const addTopping = async (req, res, next) => {
     }
 }
 
-const getToppings = async (req, res, next) => {
-    try {
-        
-    } catch (error) {
-        console.error(error);
-        next(error);
-    }
-}
-
 module.exports = {
     dashboard,
     feedbacks,
@@ -152,5 +143,4 @@ module.exports = {
     updateToppingImage,
     deleteTopping,
     addTopping,
-    getToppings,
 }

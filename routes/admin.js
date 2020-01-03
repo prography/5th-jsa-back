@@ -27,15 +27,10 @@ const router = Router();
 
 router.get('/dashboard', adminService.dashboard);
 router.get('/feedbacks', adminService.feedbacks);
-
 router.patch('/topping/name', adminService.updateToppingName);
 router.patch('/topping/category', adminService.updateToppingCategory);
-
 router.post('/topping/image/:size', upload.single('img'), adminService.updateToppingImage);
-
 router.delete('/topping', adminService.deleteTopping);
 router.post('/topping', upload.fields([{name: 'small'}, {name: 'large'}]), adminService.addTopping);
-
-router.get('/toppings', adminService.getToppings);
 
 module.exports = router;
