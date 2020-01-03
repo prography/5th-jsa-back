@@ -18,7 +18,7 @@ const upload = multer({
             let ext = path.extname(file.originalname);
             cb(null, path.basename(file.originalname, ext) + new Date().valueOf() + ext)
         },
-        acl: 'public-read-write',
+        acl: 'public-read',
         //limits: {fileSize: 10 * 1024 * 1024},
     }),
 });
@@ -34,7 +34,7 @@ router.patch('/topping/category', adminService.updateToppingCategory);
 router.post('/topping/image/:size', upload.single('img'), adminService.updateToppingImage);
 
 router.delete('/topping', adminService.deleteTopping);
-router.post('/topping', upload.array('img', 2), adminService.addTopping);
+router.post('/topping', upload.fields([{name: 'small'}, {name: 'large'}]), adminService.addTopping);
 
 router.get('/toppings', adminService.getToppings);
 

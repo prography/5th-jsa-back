@@ -131,14 +131,16 @@ const addTopping = async (req, res, next) => {
     try {
         const name = req.body.name;
         const category = req.body.category;
-        // const image = req.body.image;
-        // const resultImage = req.body.resultImage;
-        const image = req.files[0];
-        const resultImage = req.files[1];
+        const image = req.files.small[0].location;
+        const resultImage = req.files.large[0].location;
         const subclass = await new Subclass({
             name, category, image, resultImage
         });
-        res.json(subclass);
+        await subclass.save();
+        res.json({
+            "smallImageURL": image,
+            "largeImageURL": resultImage,
+        });
     } catch (error) {
         console.error(error);
         next(error);
