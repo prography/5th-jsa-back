@@ -94,22 +94,10 @@ const updateToppingImage = async (req, res, next) => {
         const id = req.body.id;
         if (req.params.size === 'large') {
             await Subclass.updateOne({ _id: id }, { resultImage: image });
-        } else {
+        } else if (req.params.size === 'small') {
             await Subclass.updateOne({ _id: id }, { image: image });
         }
-        res.send('OK');
-    } catch (error) {
-        console.error(error);
-        next(error);
-    }
-}
-
-const updateToppingImages = async (req, res, next) => {
-    try {
-        const image = req.file.location;
-        await Subclass.updateOne({
-            
-        })
+        res.json({"url": image});
     } catch (error) {
         console.error(error);
         next(error);
@@ -162,7 +150,6 @@ module.exports = {
     updateToppingName,
     updateToppingCategory,
     updateToppingImage,
-    updateToppingImages,
     deleteTopping,
     addTopping,
     getToppings,
