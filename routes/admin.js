@@ -1,10 +1,8 @@
 import { Router } from 'express';
 import adminService from '../services/adminService';
-
 import path from 'path';
 import multer from 'multer';
 import multerS3 from 'multer-s3';
-import fs from 'fs';
 import AWS from 'aws-sdk';
 
 AWS.config.loadFromPath(__dirname + '/../config/awsconfig.json');
