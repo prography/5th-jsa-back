@@ -9,10 +9,10 @@ import dotenv from 'dotenv';
 import flash from 'connect-flash';
 import cors from 'cors';
 import bodyParser from 'body-parser';
-
 import connect from './schemas';
 import routes from './routes';
 import passportConfig from './passport';
+
 
 const app = express();
 connect(); // db 연결

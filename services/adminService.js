@@ -4,40 +4,6 @@ import Subclass from '../schemas/subclass';
 import Feedback from '../schemas/feedback';
 import Comment from '../schemas/comment';
 
-const deleteTopping = async (req, res, next) => {
-    try {
-        const name = req.body.name;
-        await Subclass.deleteOne({ name: name });
-        res.send('OK');
-    } catch (error) {
-        console.log(error);
-        next(error);
-    }
-}
-
-const updateToppingName = async (req, res, next) => {
-    try {
-        const prev = req.body.prev;
-        const next = req.body.next;
-        await Subclass.updateOne( { name: prev }, { name: next });
-        res.send('OK');
-    } catch (error) {
-        console.log(error);
-        next(error);
-    }
-}
-
-const updateToppingCategory = async (req, res, next) => {
-    try {
-        const name = req.body.name;
-        const category = req.body.category;
-        await Subclass.updateOne( { name: name }, { category: category });
-        res.send('OK');
-    } catch (error) {
-        console.log(error);
-        next(error);
-    }
-}
 
 const dashboard = async (req, res, next) =>{
     try{
@@ -58,7 +24,7 @@ const dashboard = async (req, res, next) =>{
             comments: newComments
         })
     }catch(error){
-        console.log(error);
+        console.error(error);
         next(error);
     }
 }
@@ -93,7 +59,97 @@ const feedbacks = async (req, res, next)=>{
             feedbacks: feedback
         })
     }catch(error){
-        console.log(error);
+        console.error(error);
+        next(error);
+    }
+}
+
+const updateToppingName = async (req, res, next) => {
+    try {
+        const prev = req.body.prev;
+        const next = req.body.next;
+        await Subclass.updateOne( { name: prev }, { name: next });
+        res.json( {name: next} );
+    } catch (error) {
+        console.error(error);
+        next(error);
+    }
+}
+
+const updateToppingCategory = async (req, res, next) => {
+    try {
+        const id = req.body.id;
+        const category = req.body.category;
+        await Subclass.updateOne( { _id: id }, { category: category });
+        res.json( {category: category} );
+    } catch (error) {
+        console.error(error);
+        next(error);
+    }
+}
+
+const updateToppingImage = async (req, res, next) => {
+    try {
+        const image = req.file.location;
+        const id = req.body.id;
+        if (req.params.size === 'large') {
+            await Subclass.updateOne({ _id: id }, { resultImage: image });
+        } else {
+            await Subclass.updateOne({ _id: id }, { image: image });
+        }
+        res.send('OK');
+    } catch (error) {
+        console.error(error);
+        next(error);
+    }
+}
+
+const updateToppingImages = async (req, res, next) => {
+    try {
+        const image = req.file.location;
+        await Subclass.updateOne({
+            
+        })
+    } catch (error) {
+        console.error(error);
+        next(error);
+    }
+}
+
+const deleteTopping = async (req, res, next) => {
+    try {
+        const name = req.body.name;
+        await Subclass.deleteOne({ name: name });
+        res.send('OK');
+    } catch (error) {
+        console.error(error);
+        next(error);
+    }
+}
+
+const addTopping = async (req, res, next) => {
+    try {
+        const name = req.body.name;
+        const category = req.body.category;
+        // const image = req.body.image;
+        // const resultImage = req.body.resultImage;
+        const image = req.files[0];
+        const resultImage = req.files[1];
+        const subclass = await new Subclass({
+            name, category, image, resultImage
+        });
+        res.json(subclass);
+    } catch (error) {
+        console.error(error);
+        next(error);
+    }
+}
+
+const getToppings = async (req, res, next) => {
+    try {
+        
+    } catch (error) {
+        console.error(error);
         next(error);
     }
 }
@@ -103,6 +159,9 @@ module.exports = {
     feedbacks,
     updateToppingName,
     updateToppingCategory,
+    updateToppingImage,
+    updateToppingImages,
     deleteTopping,
-
+    addTopping,
+    getToppings,
 }
