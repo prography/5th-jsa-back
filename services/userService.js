@@ -39,6 +39,7 @@ const userKakao = async (req, res, next) =>{
     const id = kakao.id;
     const email = kakao.kakao_account.email;
     const nickname = kakao.kakao_account.profile.nickname;
+    const image = kakao.kakao_account.profile.profile_image_url;
     User.findOne({ kakao : id})
       .then(user =>{
         if(user){
@@ -56,7 +57,8 @@ const userKakao = async (req, res, next) =>{
           const newUser = new User({
             kakao: id,
             email: email,
-            nickname: nickname
+            nickname: nickname,
+            profile_image: image,
           });
           newUser.save();
           const payload ={
@@ -79,18 +81,18 @@ const userKakao = async (req, res, next) =>{
 
 const userCheck = async (req, res, next) =>{
     try {
-        let token = req.headers.authorization
+        let token = req.headers.authorization;
         jwt.verify(token, `${process.env.secretKey}`, async function (err, decoded) {
           if (!err) {
             let kakao = decoded.id;
-            const user = await User.findOne({ kakao: kakao }, {});
-            const nickname= user.nickname;
+            const user = await User.findOne({ kakao: kakao }, {kakao:0, nickname:0, profile_image:0});
             res.json({
-              user: nickname
+              user: user,
+              login: "true"
             })
           } else {
             res.json({
-              result: "로그인이 되어 있지 않습니다."
+              login: "false"
             })
           }
         });
