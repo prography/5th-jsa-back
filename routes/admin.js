@@ -31,4 +31,7 @@ router.post('/topping/image/:size', upload.single('img'), adminService.updateTop
 router.delete('/topping', adminService.deleteTopping);
 router.post('/topping', upload.fields([{name: 'small'}, {name: 'large'}]), adminService.addTopping);
 
+router.get('/users', adminService.getUsers);
+router.post('/', adminService.addAdmin);
+
 module.exports = router;

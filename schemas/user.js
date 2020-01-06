@@ -3,14 +3,12 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
 const userSchema = new Schema({
-    email: {
+    kakao: {
         type: String,
-        required: true,
         unique: true,
     },
-    password: {
+    email: {
         type: String,
-        required: true,
     },
     nickname: {
         type: String,
@@ -22,10 +20,19 @@ const userSchema = new Schema({
         required: true,
         default: [],
     },
-    provider: {
+    like: {
+        type: Array,
+        default: [],
+    },
+    provider: { // 로컬 로그인 안써서 불필요해짐
         type: String,
         required: true,
         default: 'local',
+    },
+    isAdmin: {
+        type: Boolean,
+        required: true,
+        default: false,
     },
     createdAt: {
         type: Date,

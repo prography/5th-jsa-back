@@ -104,11 +104,14 @@ const updateToppingImage = async (req, res, next) => {
     }
 }
 
+// api 문서 수정 필요
 const deleteTopping = async (req, res, next) => {
     try {
         const name = req.body.name;
         await Subclass.deleteOne({ name: name });
-        res.send('OK');
+        res.json({
+            result: 'ok',
+        });
     } catch (error) {
         console.error(error);
         next(error);
@@ -131,6 +134,28 @@ const addTopping = async (req, res, next) => {
         });
     } catch (error) {
         console.error(error);
+        next(error);
+    }
+}
+
+const getUsers = async (req, res, next) => {
+    try {
+        
+    } catch (error) {
+        console.error(error);
+        next(error);
+    }
+}
+
+const addAdmin = async (req, res, next) => {
+    try {
+        const id = req.body.id;
+        await User.updateOne({ _id: id }, { isAdmin: true });
+        res.json({
+            result: 'ok',
+        });
+    } catch (error) {
+        console.l=error(error);
         next(error);
     }
 }
