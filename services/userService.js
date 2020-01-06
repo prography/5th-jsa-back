@@ -85,7 +85,7 @@ const userCheck = async (req, res, next) =>{
         jwt.verify(token, `${process.env.secretKey}`, async function (err, decoded) {
           if (!err) {
             let kakao = decoded.id;
-            const user = await User.findOne({ kakao: kakao }, {kakao:0, nickname:0, profile_image:0});
+            const user = await User.findOne({ kakao: kakao }, {kakao:1, nickname:1, profile_image:1});
             res.json({
               user: user,
               login: "true"
