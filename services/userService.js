@@ -39,6 +39,7 @@ const userKakao = async (req, res, next) =>{
     const id = kakao.id;
     const email = kakao.kakao_account.email;
     const nickname = kakao.kakao_account.profile.nickname;
+    const image = kakao.kakao_account.profile.profile_image_url;
     User.findOne({ kakao : id})
       .then(user =>{
         if(user){
@@ -56,7 +57,8 @@ const userKakao = async (req, res, next) =>{
           const newUser = new User({
             kakao: id,
             email: email,
-            nickname: nickname
+            nickname: nickname,
+            profile_image: image,
           });
           newUser.save();
           const payload ={

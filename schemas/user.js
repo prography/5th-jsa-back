@@ -15,6 +15,9 @@ const userSchema = new Schema({
         required: true,
         unique: true,
     },
+    profile_image: {
+        type: String
+    },
     baskets: {
         type: Array,
         required: true,
