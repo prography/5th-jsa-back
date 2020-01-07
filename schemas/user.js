@@ -9,6 +9,8 @@ const userSchema = new Schema({
     },
     email: {
         type: String,
+        required: true,
+        unique: true,
     },
     nickname: {
         type: String,
@@ -22,12 +24,8 @@ const userSchema = new Schema({
     },
     like: {
         type: Array,
-        default: [],
-    },
-    provider: { // 로컬 로그인 안써서 불필요해짐
-        type: String,
         required: true,
-        default: 'local',
+        default: [],
     },
     isAdmin: {
         type: Boolean,
@@ -36,6 +34,7 @@ const userSchema = new Schema({
     },
     createdAt: {
         type: Date,
+        required: true,
         default: Date.now,
     },
 });
