@@ -47,7 +47,7 @@ const likePizza = async (req, res, next) => {
 
 const commentPizza = async (req, res, next) => {
     try {
-        let token = req.headers.authorization
+        let token = req.headers.authorization;
 
         jwt.verify(token, `${process.env.secretKey}`, async function (err, decoded) {
             if (!err) {
@@ -104,6 +104,7 @@ const commentPizza = async (req, res, next) => {
 
 const recommandPizzas = async (req, res, next) => {  // 피자 추천 api
     try {
+        let token = req.headers.authorization;
         const recomandations = [];
 
         let item = req.body.items;
@@ -111,13 +112,27 @@ const recommandPizzas = async (req, res, next) => {  // 피자 추천 api
         if (!page) {
             page = 1;
         }
+
+        // 최근 검색 결과 추가
+        if(page === 1){
+            jwt.verify(token, `${process.env.secretKey}`, async function (err, decoded){
+                if(!err){
+                    let id = decoded.id;
+                    const user = await User.findOne({ kakao: id }, {});
+                    user.baskets.unshift(item);
+                    user.save();
+                }
+            })    
+        }
+
+
         if (!item) {
             return res.json({
                 result: "no item"
             });
         }
         const items = item.split(",");
-        const pizzas = await Pizza.find({}, { brand: 1, name: 1, m_price: 1, m_cal: 1, subclasses: 1, image: 1 });
+        const pizzas = await Pizza.find({}, { brand: 1, name: 1, m_price: 1, m_cal: 1, subclasses: 1, image: 1, comments: 1, like: 1 });
         pizzas.forEach(pizza => {
             if (items.some(x => pizza.subclasses.indexOf(x) !== -1)) {
                 const pizzaObject = new Object();
@@ -133,8 +148,12 @@ const recommandPizzas = async (req, res, next) => {  // 피자 추천 api
                 pizzaObject.m_price = pizza.m_price;
                 pizzaObject.m_cal = pizza.m_cal;
                 pizzaObject.image = pizza.image;
+                pizzaObject.comments = pizza.comments.length;
+                pizzaObject.likeNum = pizza.like.length;
+                pizzaObject.like = pizza.like;
                 pizzaObject.matchItem = matchItem;
                 pizzaObject.correctTopping = matchItem.length;
+                
                 //console.log(pizza)
                 recomandations.push(pizzaObject);
             }
