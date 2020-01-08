@@ -65,7 +65,7 @@ const userKakao = async (req, res, next) =>{
             id: id,
             nickname: nickname,
           }
-          jwt.sign(payload, `${process.env.secretKey}`, { expiresIn: 3600 }, (err, token) => {
+          jwt.sign(payload, `${process.env.secretKey}`, { expiresIn: '7d' }, (err, token) => {
             res.json({
               success: "success",
               token: token
