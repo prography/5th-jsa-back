@@ -20,7 +20,6 @@ const userSchema = new Schema({
     },
     baskets: {
         type: Array,
-        required: true,
         default: [],
     },
     like: {
