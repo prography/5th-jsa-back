@@ -15,6 +15,7 @@ const router = Router();
 
 router.get('/', userService.userKakao);
 router.get('/check', userService.userCheck);
+router.get('/mypage', userService.getUserInfo);
 
 
 router.post('/feedback', async (req, res, next) => {
