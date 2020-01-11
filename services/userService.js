@@ -102,7 +102,16 @@ const userCheck = async (req, res, next) =>{
       }
 }
 
+const getUserInfo = async (req, res, next) => {
+  try {
+    
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+}
 module.exports ={
     userCheck,
-    userKakao
+    userKakao,
+    getUserInfo,
 }

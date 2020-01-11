@@ -9,8 +9,6 @@ const userSchema = new Schema({
     },
     email: {
         type: String,
-        required: true,
-        unique: true,
     },
     nickname: {
         type: String,
@@ -26,11 +24,6 @@ const userSchema = new Schema({
     },
     like: {
         type: Array,
-        default: [],
-    },
-    like: {
-        type: Array,
-        required: true,
         default: [],
     },
     isAdmin: {

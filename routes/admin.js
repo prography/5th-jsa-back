@@ -30,7 +30,6 @@ router.patch('/topping/category', adminService.updateToppingCategory);
 router.post('/topping/image/:size', upload.single('img'), adminService.updateToppingImage);
 router.delete('/topping', adminService.deleteTopping);
 router.post('/topping', upload.fields([{name: 'small'}, {name: 'large'}]), adminService.addTopping);
-
 router.get('/users', adminService.getUsers);
 router.post('/', adminService.addAdmin);
 
