@@ -1,10 +1,9 @@
 import User from '../schemas/user';
 import Pizza from '../schemas/pizza';
-import jwt from 'jsonwebtoken';
-import dotenv from 'dotenv';
-import passport from 'passport';
+import Subclass from '../schemas/subclass';
 import Feedback from '../schemas/feedback';
 import Comment from '../schemas/comment';
+
 
 const dashboard = async (req, res, next) =>{
     try{
@@ -25,7 +24,7 @@ const dashboard = async (req, res, next) =>{
             comments: newComments
         })
     }catch(error){
-        console.log(error);
+        console.error(error);
         next(error);
     }
 }
@@ -60,12 +59,116 @@ const feedbacks = async (req, res, next)=>{
             feedbacks: feedback
         })
     }catch(error){
-        console.log(error);
+        console.error(error);
+        next(error);
+    }
+}
+
+const updateToppingName = async (req, res, next) => {
+    try {
+        const prev = req.body.prev;
+        const next = req.body.next;
+        await Subclass.updateOne( { name: prev }, { name: next });
+        res.json( {name: next} );
+    } catch (error) {
+        console.error(error);
+        next(error);
+    }
+}
+
+const updateToppingCategory = async (req, res, next) => {
+    try {
+        const id = req.body.id;
+        const category = req.body.category;
+        await Subclass.updateOne( { _id: id }, { category: category });
+        res.json( {category: category} );
+    } catch (error) {
+        console.error(error);
+        next(error);
+    }
+}
+
+const updateToppingImage = async (req, res, next) => {
+    try {
+        const image = req.file.location;
+        const id = req.body.id;
+        if (req.params.size === 'large') {
+            await Subclass.updateOne({ _id: id }, { resultImage: image });
+        } else if (req.params.size === 'small') {
+            await Subclass.updateOne({ _id: id }, { image: image });
+        }
+        res.json({"url": image});
+    } catch (error) {
+        console.error(error);
+        next(error);
+    }
+}
+
+// api 문서 수정 필요
+const deleteTopping = async (req, res, next) => {
+    try {
+        const name = req.body.name;
+        await Subclass.deleteOne({ name: name });
+        res.json({
+            result: 'ok',
+        });
+    } catch (error) {
+        console.error(error);
+        next(error);
+    }
+}
+
+const addTopping = async (req, res, next) => {
+    try {
+        const name = req.body.name;
+        const category = req.body.category;
+        const image = req.files.small[0].location;
+        const resultImage = req.files.large[0].location;
+        const subclass = await new Subclass({
+            name, category, image, resultImage
+        });
+        await subclass.save();
+        res.json({
+            "smallImageURL": image,
+            "largeImageURL": resultImage,
+        });
+    } catch (error) {
+        console.error(error);
+        next(error);
+    }
+}
+
+const getUsers = async (req, res, next) => {
+    try {
+        const users = await User.find({isAdmin: false});
+        res.json(users);
+    } catch (error) {
+        console.error(error);
+        next(error);
+    }
+}
+
+const addAdmin = async (req, res, next) => {
+    try {
+        const id = req.body.id;
+        await User.updateOne({ _id: id }, { isAdmin: true });
+        res.json({
+            result: 'ok',
+        });
+    } catch (error) {
+        console.l=error(error);
         next(error);
     }
 }
 
 module.exports = {
     dashboard,
-    feedbacks
+    feedbacks,
+    updateToppingName,
+    updateToppingCategory,
+    updateToppingImage,
+    deleteTopping,
+    addTopping,
+    getUsers,
+    addAdmin,
 }

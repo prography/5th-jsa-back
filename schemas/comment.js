@@ -7,6 +7,9 @@ const commentSchema = new Schema({
         type: String,
         required: true
     },
+    pizzaId:{
+        type: String
+    },
     text:{
         type: String,
         required: true
@@ -15,9 +18,7 @@ const commentSchema = new Schema({
         type: Date,
         default: Date.now
     },
-    pizzaId:{
-        type: String
-    } 
+
 });
 
 module.exports = mongoose.model('Comment', commentSchema);

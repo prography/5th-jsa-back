@@ -1,6 +1,5 @@
 import Pizza from '../schemas/pizza';
 import SubClass from '../schemas/subclass';
-import Topping from '../schemas/topping';
 import User from '../schemas/user';
 import Comment from '../schemas/comment';
 import jwt from 'jsonwebtoken';
