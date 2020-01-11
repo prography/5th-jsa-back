@@ -104,7 +104,23 @@ const userCheck = async (req, res, next) =>{
 
 const getUserInfo = async (req, res, next) => {
   try {
-    
+    let token = req.headers.authorization;
+    jwt.verify(token, `${process.env.secretKey}`, async function (err, decoded) {
+      if (!err) {
+        let kakao = decoded.id;
+        const user = await User.findOne({ kakao: kakao }, {});
+        res.json({
+          name: user.nickname,
+          profileImage: user.profile_image,
+          recent: user.baskets,
+          likes: user.like,
+        });
+      } else {
+        res.json({
+          result: "must login"
+        })
+      }
+    });    
   } catch (error) {
     console.error(error);
     next(error);

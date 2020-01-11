@@ -10,7 +10,5 @@ router.get("/details/:id", pizzaService.getDetails);
 router.get("/random", pizzaService.randomPizza);
 router.get("/toppings", pizzaService.getToppings);
 router.get("/toppings/image", pizzaService.getToppingImage);
-router.post('/like/:id', pizzaService.like);
-router.delete('/like/:id', pizzaService.unlike);
 
 module.exports = router;
