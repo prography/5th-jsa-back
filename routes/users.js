@@ -1,9 +1,7 @@
 import { Router } from 'express';
-import { isLoggedIn } from '../middlewares';
 import User from '../schemas/user';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
-import passport from 'passport';
 import Feedback from '../schemas/feedback';
 import crypto from 'crypto';
 import userService from '../services/userService';
@@ -11,7 +9,8 @@ import userService from '../services/userService';
 dotenv.config();
 const router = Router();
 
-// router.use(isLoggedIn);
+router.get('/', userService.userKakao);
+router.get('/check', userService.userCheck);
 
 router.post('/feedback', async (req, res, next) => {
   try {
@@ -105,17 +104,5 @@ router.post('/login', (req, res) => {
       }
     })
 });
-
-router.get('/check', userService.userCheck);
-
-// router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
-//   res.json({
-//     id: req.user.id,
-//     email: req.user.email,
-//     nickname: req.user.nickname
-//   })
-// });
-
-// 
 
 module.exports = router;

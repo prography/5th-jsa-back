@@ -3,6 +3,7 @@ import pizzaService from '../services/pizzaService';
 
 const router = Router();
 
+router.get("/like", pizzaService.likePizza);
 router.post("/comments", pizzaService.commentPizza);
 router.post("/recomandations", pizzaService.recommandPizzas);
 router.get("/details/:id", pizzaService.getDetails);
