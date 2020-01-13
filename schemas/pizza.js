@@ -51,7 +51,7 @@ const pizzaSchema = new Schema({
             }
         }
     ],
-    likes: {
+    like: {
         type: Array,
         required: true,
         default: [],

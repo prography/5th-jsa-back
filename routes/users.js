@@ -13,6 +13,11 @@ const router = Router();
 
 // router.use(isLoggedIn);
 
+router.get('/', userService.userKakao);
+router.get('/check', userService.userCheck);
+router.get('/mypage', userService.getUserInfo);
+
+
 router.post('/feedback', async (req, res, next) => {
   try {
     const feedback = new Feedback({ content: req.body.content });
@@ -105,17 +110,5 @@ router.post('/login', (req, res) => {
       }
     })
 });
-
-router.get('/check', userService.userCheck);
-
-// router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
-//   res.json({
-//     id: req.user.id,
-//     email: req.user.email,
-//     nickname: req.user.nickname
-//   })
-// });
-
-// 
 
 module.exports = router;

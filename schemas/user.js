@@ -9,17 +9,21 @@ const userSchema = new Schema({
     },
     email: {
         type: String,
-        required: true,
-        unique: true,
     },
     nickname: {
         type: String,
         required: true,
         unique: true,
     },
+    profile_image: {
+        type: String
+    },
     baskets: {
         type: Array,
-        required: true,
+        default: [],
+    },
+    like: {
+        type: Array,
         default: [],
     },
     like: {

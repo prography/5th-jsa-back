@@ -4,42 +4,54 @@ import User from '../schemas/user';
 import Comment from '../schemas/comment';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
+import request from 'request-promise-native';
 
 dotenv.config();
 
-const like = async (req, res, next) => {
+const likePizza = async (req, res, next) => {
     try {
-        await Pizza.findOneAndUpdate(
-            { idx: req.params.id }, { $push: {likes: req.user.email} }
-        );
-        res.send('OK');
-    } catch (error) {
-        console.error(error);
-        next(error);
-    }
-}
-
-const unlike = async (req, res, next) => {
-    try {
-        await Pizza.findOneAndUpdate(
-            { idx: req.params.id }, { $pullAll: { likes: [req.user.email] } } 
-        );
-        res.send('OK');
-    } catch (error) {
-        console.error(error);
-        next(error);
-    }
-}
-
-const commentPizza = async (req, res, next) =>{
-    try{
-
-        let token = req.headers.authorization
-
+        let token = req.headers.authorization;
+        let pizzaId = req.headers.pizza;
         jwt.verify(token, `${process.env.secretKey}`, async function (err, decoded) {
             if (!err) {
                 let id = decoded.id;
-                const user = await User.findOne({ _id: id }, {});
+                const user = await User.findOne({ kakao: id }, {});
+                const pizza = await Pizza.findOne({ _id: pizzaId }, {});
+                let like = pizza.like;
+                if(like.includes(user.kakao)){
+                    //arr.splice(arr.indexOf("A"),1);
+                    pizza.like.splice(pizza.like.indexOf(user.kakao), 1);
+                    user.like.splice(user.like.indexOf(pizza._id), 1);
+                }else{
+                    pizza.like.unshift(user.kakao);
+                    user.like.unshift(pizza._id);
+                }
+                await pizza.save();
+                await user.save();
+                res.json({
+                    like: pizza.like
+                })
+            } else {
+                res.json({
+                    result: "must login"
+                })
+            }
+        })
+
+    } catch (err) {
+        console.log(err);
+        next(err);
+    }
+}
+
+const commentPizza = async (req, res, next) => {
+    try {
+        let token = req.headers.authorization;
+        console.log("---------------------------제발\n", token);
+        jwt.verify(token, `${process.env.secretKey}`, async function (err, decoded) {
+            if (!err) {
+                let id = decoded.id;
+                const user = await User.findOne({ kakao: id }, {});
                 const nickname = user.nickname;
                 let pizzaId = req.body.pizza;
                 const pizza = await Pizza.findById({ _id: pizzaId })
@@ -91,20 +103,36 @@ const commentPizza = async (req, res, next) =>{
 
 const recommandPizzas = async (req, res, next) => {  // 피자 추천 api
     try {
+        let token = req.headers.authorization;
         const recomandations = [];
 
         let item = req.body.items;
         let page = req.body.page;
-        if(!page){
+        if (!page) {
             page = 1;
         }
+
+        // 최근 검색 결과 추가
+        if(page === 1){
+            jwt.verify(token, `${process.env.secretKey}`, async function (err, decoded){
+                if(!err){
+                    let id = decoded.id;
+                    const user = await User.findOne({ kakao: id }, {});
+                    user.baskets.unshift(item);
+                    user.save();
+                }
+            })    
+        }
+
+
         if (!item) {
             return res.json({
                 result: "no item"
             });
         }
         const items = item.split(",");
-        const pizzas = await Pizza.find({}, { brand: 1, name: 1, m_price: 1, m_cal: 1, subclasses: 1, image: 1 });
+        let itemsLength = Math.round(items.length / 2);
+        const pizzas = await Pizza.find({}, { brand: 1, name: 1, m_price: 1, m_cal: 1, subclasses: 1, image: 1, comments: 1, like: 1 });
         pizzas.forEach(pizza => {
             if (items.some(x => pizza.subclasses.indexOf(x) !== -1)) {
                 const pizzaObject = new Object();
@@ -120,25 +148,26 @@ const recommandPizzas = async (req, res, next) => {  // 피자 추천 api
                 pizzaObject.m_price = pizza.m_price;
                 pizzaObject.m_cal = pizza.m_cal;
                 pizzaObject.image = pizza.image;
+                pizzaObject.comments = pizza.comments.length;
+                pizzaObject.likeNum = pizza.like.length;
+                pizzaObject.like = pizza.like;
                 pizzaObject.matchItem = matchItem;
                 pizzaObject.correctTopping = matchItem.length;
+                if(matchItem.length >= itemsLength){
+                    recomandations.push(pizzaObject);
+                }
                 //console.log(pizza)
-                recomandations.push(pizzaObject);
             }
         });
         let pizzaNum = recomandations.length;
-        recomandations.sort(function(a,b){
-            return a.correctTopping < b.correctTopping ? 1 : a.correctTopping>b.correctTopping ? -1 : 0;
+        recomandations.sort(function (a, b) {
+            return a.correctTopping < b.correctTopping ? 1 : a.correctTopping > b.correctTopping ? -1 : 0;
         })
-        let limit = 10;
-        let startPaging = (page-1) * limit;
-        let lastPaging = limit * page;
-        const sliceRecomandations = recomandations.slice(startPaging, lastPaging);
-        console.log(sliceRecomandations.length)
+        
         res.json({
             toppings: items.length,
-            num: pizzaNum,
-            pizzas: sliceRecomandations
+            pizzaNum: pizzaNum,
+            pizzas: recomandations
         });
     } catch (error) {
         console.error(error);
@@ -216,6 +245,7 @@ const getToppingImage = async (req, res, next) => {
 
 
 module.exports = {
+    likePizza,
     commentPizza,
     recommandPizzas,
     getDetails,
