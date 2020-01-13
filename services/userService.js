@@ -1,7 +1,8 @@
 import User from '../schemas/user';
+import Subclass from '../schemas/subclass';
+import Pizza from '../schemas/pizza';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
-import crypto from 'crypto';
 import request from 'request-promise-native';
 
 dotenv.config();
@@ -109,11 +110,29 @@ const getUserInfo = async (req, res, next) => {
       if (!err) {
         let kakao = decoded.id;
         const user = await User.findOne({ kakao: kakao }, {});
+
+        const likes = [];
+        for (const pizzaId of user.like) {
+          let pizza = await Pizza.findOne({_id : pizzaId}, {_id: 1, brand:1, name: 1});
+          likes.push(pizza);
+        };
+
+        // recent에 토핑 이미지 추가
+        const recent = [];
+        for (const list of user.baskets) {
+          let arr = [];
+          let toppings = list.split(',');
+          for (const topping of toppings) {
+            let el = await Subclass.findOne({name: topping}, {_id: 1, name: 1, image: 1});
+            arr.push(el);
+          }
+          recent.push(arr);
+        };
         res.json({
           name: user.nickname,
           profileImage: user.profile_image,
-          recent: user.baskets,
-          likes: user.like,
+          recent: recent,
+          likes: likes,
         });
       } else {
         res.json({
