@@ -1,5 +1,6 @@
 import Pizza from '../schemas/pizza';
 import SubClass from '../schemas/subclass';
+import Topping from '../schemas/topping';
 import User from '../schemas/user';
 import Comment from '../schemas/comment';
 import jwt from 'jsonwebtoken';
@@ -47,7 +48,6 @@ const likePizza = async (req, res, next) => {
 const commentPizza = async (req, res, next) => {
     try {
         let token = req.headers.authorization;
-        console.log("---------------------------제발\n", token);
         jwt.verify(token, `${process.env.secretKey}`, async function (err, decoded) {
             if (!err) {
                 let id = decoded.id;
@@ -252,6 +252,4 @@ module.exports = {
     randomPizza,
     getToppings,
     getToppingImage,
-    like,
-    unlike,
 }

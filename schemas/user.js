@@ -26,11 +26,6 @@ const userSchema = new Schema({
         type: Array,
         default: [],
     },
-    like: {
-        type: Array,
-        required: true,
-        default: [],
-    },
     isAdmin: {
         type: Boolean,
         required: true,

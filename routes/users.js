@@ -1,9 +1,7 @@
 import { Router } from 'express';
-import { isLoggedIn } from '../middlewares';
 import User from '../schemas/user';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
-import passport from 'passport';
 import Feedback from '../schemas/feedback';
 import crypto from 'crypto';
 import userService from '../services/userService';
@@ -11,7 +9,9 @@ import userService from '../services/userService';
 dotenv.config();
 const router = Router();
 
-// router.use(isLoggedIn);
+router.get('/', userService.userKakao);
+router.get('/check', userService.userCheck);
+router.get('/mypage', userService.getUserInfo);
 
 router.get('/', userService.userKakao);
 router.get('/check', userService.userCheck);
