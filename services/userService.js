@@ -117,7 +117,6 @@ const getUserInfo = async (req, res, next) => {
           likes.push(pizza);
         };
 
-        // recent에 토핑 이미지 추가
         const recent = [];
         for (const list of user.baskets) {
           let arr = [];
@@ -145,8 +144,21 @@ const getUserInfo = async (req, res, next) => {
     next(error);
   }
 }
+
+const getLikes = async (req, res, next) => {
+  try {
+    const pizzas = await Pizza.find({_id: {$in: req.body.likes}}, 
+      {_id: 1, brand: 1, name: 1, m_price: 1, m_cal: 1, subclasses: 1, image: 1, comments: 1, like: 1 });
+      res.json(pizzas);
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+}
+
 module.exports ={
     userCheck,
     userKakao,
     getUserInfo,
+    getLikes,
 }
