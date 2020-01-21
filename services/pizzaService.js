@@ -53,6 +53,7 @@ const commentPizza = async (req, res, next) => {
                 let id = decoded.id;
                 const user = await User.findOne({ kakao: id }, {});
                 const nickname = user.nickname;
+                const image = user.profile_image;
                 let pizzaId = req.body.pizza;
                 const pizza = await Pizza.findById({ _id: pizzaId })
                 let comment = req.body.comment;
@@ -71,7 +72,8 @@ const commentPizza = async (req, res, next) => {
 
                 const newComment = {
                     user: nickname,
-                    text: comment
+                    text: comment,
+                    image: image,
                 }
 
                 pizza.comments.unshift(newComment);
