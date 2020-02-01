@@ -48,6 +48,7 @@ const likePizza = async (req, res, next) => {
 const commentPizza = async (req, res, next) => {
     try {
         let token = req.headers.authorization;
+	console.log("--------------------------------->", token);
         jwt.verify(token, `${process.env.secretKey}`, async function (err, decoded) {
             if (!err) {
                 let id = decoded.id;
@@ -116,8 +117,10 @@ const recommandPizzas = async (req, res, next) => {  // 피자 추천 api
 
         // 최근 검색 결과 추가
         if(page === 1){
-            jwt.verify(token, `${process.env.secretKey}`, async function (err, decoded){
+            console.log("test===========>", token);
+	    jwt.verify(token, `${process.env.secretKey}`, async function (err, decoded){
                 if(!err){
+		    console.log("check----------------------------->", token);
                     let id = decoded.id;
                     const user = await User.findOne({ kakao: id }, {});
                     user.baskets.unshift(item);
@@ -222,6 +225,17 @@ const getToppings = async (req, res, next) => { // 토핑 리스트 보내주기
             else if (item.category === "sauce") sauce.push(item);
             else etc.push(item);
         });
+        if(meat.length === 11){
+            let meat_one = meat[1]; // 베이컨
+            let meat_three = meat[3]; // 소시지
+            let meat_six = meat[6]; // 불고기
+            let meat_nine = meat[9]; // 치킨
+            meat[1] = meat_six;
+            meat[3] = meat_nine;
+            meat[6] = meat_one;
+            meat[9] = meat_three;
+        }
+        console.log(meat);
         res.json({
             meat, seafood, vegetable, cheese, sauce, etc
         });
