@@ -251,7 +251,7 @@ const getToppingImage = async (req, res, next) => {
         const topping = req.query.topping;
         const item = await SubClass.findOne(
             { name: topping },
-            { name: 1, resultImage: 1 });
+            { name: 1, resultImage: 1, z_index: 1 });
         res.json({ result: item });
     } catch (error) {
         console.error(error);
