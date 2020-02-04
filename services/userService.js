@@ -118,12 +118,18 @@ const getUserInfo = async (req, res, next) => {
         };
 
         const recent = [];
-        for (const list of user.baskets) {
+        const baskets = user.baskets.slice(-7);
+        for (const list of baskets) {
           let arr = [];
-          let toppings = list.split(',');
-          for (const topping of toppings) {
-            let el = await Subclass.findOne({name: topping}, {_id: 1, name: 1, image: 1});
-            arr.push(el);
+          if (list.indexOf(',') === -1) {
+            const topping = await Subclass.findOne({name: list}, {_id: 1, name: 1, image: 1});
+            arr.push(topping);
+          } else {
+            let toppings = list.split(',');
+            for (const topping of toppings) {
+              let el = await Subclass.findOne({name: topping}, {_id: 1, name: 1, image: 1});
+              arr.push(el);
+            }  
           }
           recent.push(arr);
         };
