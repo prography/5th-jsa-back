@@ -12,3 +12,6 @@
 >
 > 해주시기 바랍니다.
 
+
+#### api 서버 실행문
+pm2 start yarn --name api -- start
